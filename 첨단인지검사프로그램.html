@@ -129,25 +129,53 @@
 
 <body class="bg-background font-body-lg text-on-background">
     <!-- TopAppBar -->
-    <header
-        class="fixed top-0 left-0 w-full z-[100] bg-white/70 backdrop-blur-[15px] border-b border-slate-200/50 shadow-sm transition-all duration-300 ease-in-out">
-        <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-8 h-20">
-            <a href="index.html"
-                class="text-xl font-bold text-blue-900 font-hero-display tracking-tight decoration-none">동그라미교육원</a>
-            <div class="hidden md:flex gap-8 items-center">
-                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="index.html#programs">프로그램 소개</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
-                    href="바우처지원.html#vouchers">바우처 안내</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
-                    href="기관소개.html#news">교육원소식</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는
-                    길</a>
+    <header class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20 transition-all duration-300 ease-in-out">
+        <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-8 h-full">
+            <div class="flex items-center gap-2">
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="md:hidden flex items-center p-2 text-primary" onclick="toggleMenu()">
+                    <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+                <a href="index.html" class="text-xl font-bold text-primary font-headline-lg tracking-tight shrink-0">동그라미교육원</a>
             </div>
-            <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
-                class="bg-tertiary text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all">상담
-                문의</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="index.html#programs">프로그램 소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="바우처지원.html#vouchers">바우처 안내</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원 소식</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는 길</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
+                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">상담 문의</a>
+            </div>
         </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xl flex flex-col p-6 space-y-4 md:hidden animate-in slide-in-from-top duration-300">
+            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center" href="index.html#programs" onclick="toggleMenu()">
+                프로그램 소개 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+            </a>
+            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center" href="바우처지원.html#vouchers" onclick="toggleMenu()">
+                바우처 안내 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+            </a>
+            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center" href="기관소개.html" onclick="toggleMenu()">
+                교육원소개 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+            </a>
+            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center" href="기관소개.html#news" onclick="toggleMenu()">
+                교육원 소식 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+            </a>
+            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center" href="index.html#contact" onclick="toggleMenu()">
+                오시는 길 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+            </a>
+            <div class="pt-4">
+                <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
+                    class="block w-full bg-[#03C75A] text-white px-6 py-4 rounded-xl font-bold text-center shadow-lg active:scale-95 transition-all">네이버 톡톡 상담하기</a>
+            </div>
+        </div>
     </header>
     <main class="pt-20">
         <!-- Hero Section -->
@@ -347,6 +375,24 @@
             </div>
         </div>
     </footer>
+    <script>
+        // 모바일 메뉴 토글
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const isHidden = menu.classList.contains('hidden');
+
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                icon.innerText = 'close';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('hidden');
+                icon.innerText = 'menu';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
 </body>
 
 </html>
