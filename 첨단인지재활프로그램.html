@@ -7,15 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>첨단인지 재활 치료 프로그램 - 동그라미교육원</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Noto+Sans+KR:wght@400;700&amp;family=Inter:wght@400;600&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -119,34 +111,28 @@
 </head>
 
 <body class="bg-background text-on-background selection:bg-primary-container selection:text-primary">
-    <!-- TopAppBar -->
-    <header
-        class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20 transition-all duration-300 ease-in-out">
+    <header class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20 transition-all duration-300 ease-in-out">
         <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-8 h-full">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center">
                 <!-- Mobile Menu Toggle -->
-                <button id="menu-toggle" class="md:hidden flex items-center p-2 text-primary" onclick="toggleMenu()">
+                <button id="menu-toggle" class="md:hidden flex items-center pr-2 text-primary" onclick="toggleMenu()">
                     <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
                 </button>
                 <a href="index.html" class="text-xl font-bold text-primary font-headline-lg tracking-tight shrink-0">동그라미교육원</a>
             </div>
-
+            
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="index.html#programs">프로그램 소개</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
-                    href="바우처지원.html#vouchers">바우처 안내</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#programs">프로그램 소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="바우처지원.html#vouchers">바우처 안내</a>
                 <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원
-                    소식</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는
-                    길</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원 소식</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는 길</a>
             </div>
 
             <div class="flex items-center gap-4">
                 <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
-                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">상담
-                    문의</a>
+                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">상담 문의</a>
             </div>
         </nav>
 
@@ -191,10 +177,10 @@
                         <span class="material-symbols-outlined text-sm">psychology</span>
                         <span class="font-label-md">Advanced Cognitive Tech</span>
                     </div>
-                    <h1 class="font-hero-display text-hero-display text-primary mb-stack-md leading-tight">
-                        첨단인지 <br /><span class="text-on-tertiary-container">재활 치료 프로그램</span>
+                    <h1 class="font-hero-display text-2xl sm:text-3xl md:text-5xl text-primary mb-6 leading-tight break-keep">
+                        첨단인지 <br class="hidden md:block" /><span class="text-secondary font-bold">재활 치료 프로그램</span>
                     </h1>
-                    <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-lg">
+                    <p class="text-sm md:text-lg text-on-surface-variant mb-8 max-w-lg leading-relaxed break-keep">
                         메타인지 전략과 뇌 균형 재활 장비를 결합하여, 단순 인지를 넘어 상위 인지 기능을 정밀하게 자극합니다. 아동과 성인의 학습 효율성과 인지 회복을 극대화하는 고도화된
                         솔루션을 경험하세요.
                     </p>
@@ -237,9 +223,9 @@
         <!-- Bento Grid Features -->
         <section class="py-section-padding bg-surface-container-low">
             <div class="max-w-[1200px] mx-auto px-8">
-                <div class="text-center mb-16">
-                    <h2 class="font-headline-lg text-headline-lg text-primary mb-4">프로그램의 핵심 가치</h2>
-                    <p class="text-on-surface-variant max-w-2xl mx-auto">과학적 근거를 바탕으로 한 개인별 맞춤형 인지 재활 시스템을 통해 더 나은 미래를
+                <div class="text-center mb-16 px-4">
+                    <h2 class="font-headline-lg text-2xl md:text-4xl text-primary mb-4 break-keep">프로그램의 핵심 가치</h2>
+                    <p class="text-sm md:text-lg text-on-surface-variant max-w-2xl mx-auto break-keep">과학적 근거를 바탕으로 한 개인별 맞춤형 인지 재활 시스템을 통해 더 나은 미래를
                         설계합니다.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -248,17 +234,14 @@
                         <div>
                             <span
                                 class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">neurology</span>
-                            <h3 class="font-headline-lg text-2xl text-primary mb-4">메타인지 전략 (Metacognition)</h3>
-                            <p class="font-body-lg text-on-surface-variant mb-6">자신의 인지 과정을 스스로 모니터링하고 조절하는 상위 인지 능력을
+                            <h3 class="font-headline-lg text-xl md:text-2xl text-primary mb-4">메타인지 전략 (Metacognition)</h3>
+                            <p class="text-sm md:text-base text-on-surface-variant mb-6 break-keep">자신의 인지 과정을 스스로 모니터링하고 조절하는 상위 인지 능력을
                                 배양합니다. 이는 단순 암기가 아닌 '학습하는 방법'을 터득하게 하여 장기적인 학습 자존감을 높입니다.</p>
                         </div>
-                        <div class="flex gap-2">
-                            <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-label-md">자가
-                                모니터링</span>
-                            <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-label-md">전략적
-                                사고</span>
-                            <span
-                                class="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-label-md">문제해결력</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-600 text-xs font-bold hover:border-primary/30 hover:text-primary transition-all cursor-default">자가 모니터링</span>
+                            <span class="px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-600 text-xs font-bold hover:border-primary/30 hover:text-primary transition-all cursor-default">전략적 사고</span>
+                            <span class="px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-600 text-xs font-bold hover:border-primary/30 hover:text-primary transition-all cursor-default">문제해결력</span>
                         </div>
                     </div>
                     <!-- Tech Block 2 -->
@@ -267,8 +250,8 @@
                         <div class="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mb-6">
                             <span class="material-symbols-outlined text-4xl">balance</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">뇌 균형 재활 장비</h3>
-                        <p class="text-sm opacity-80 leading-relaxed">
+                        <h3 class="text-lg md:text-xl font-bold mb-4">뇌 균형 재활 장비</h3>
+                        <p class="text-xs md:text-sm opacity-80 leading-relaxed break-keep">
                             좌우 뇌의 불균형을 정밀하게 측정하고, 특정 자극을 통해 신경 가소성을 활성화하는 최첨단 하드웨어 시스템을 도입하였습니다.
                         </p>
                     </div>
@@ -282,8 +265,8 @@
                     <!-- Efficiency Block -->
                     <div class="md:col-span-2 glass-card rounded-lg p-8 overflow-hidden relative group">
                         <div class="relative z-10 md:w-2/3">
-                            <h3 class="font-headline-lg text-2xl text-primary mb-4">상위 인지 기능 자극</h3>
-                            <p class="font-body-lg text-on-surface-variant">주의집중, 작업기억, 실행기능 등 복합적인 상위 인지를 동시에 자극하여 일상
+                            <h3 class="font-headline-lg text-xl md:text-2xl text-primary mb-4">상위 인지 기능 자극</h3>
+                            <p class="text-sm md:text-base text-on-surface-variant break-keep">주의집중, 작업기억, 실행기능 등 복합적인 상위 인지를 동시에 자극하여 일상
                                 생활 및 학습 현장에서의 즉각적인 효율성 변화를 이끌어냅니다.</p>
                         </div>
                         <div
@@ -302,7 +285,7 @@
                     class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden border border-outline-variant/10">
                     <!-- Left: Technical Specs -->
                     <div class="md:w-1/2 p-10 bg-surface-container-high/30">
-                        <h3 class="font-headline-lg text-2xl text-primary mb-8 flex items-center gap-2">
+                        <h3 class="font-headline-lg text-xl md:text-2xl text-primary mb-8 flex items-center gap-2">
                             <span class="material-symbols-outlined">settings_suggest</span>
                             프로그램 사양
                         </h3>
@@ -312,8 +295,8 @@
                                     class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
                                     1</div>
                                 <div>
-                                    <h4 class="font-bold text-primary mb-1">정밀 검사 단계</h4>
-                                    <p class="text-sm text-on-surface-variant">QEEG 뇌파 검사 및 인지 검사 도구를 통한 개인별 인지 프로파일링 구축
+                                    <h4 class="font-bold text-base md:text-lg text-primary mb-1">정밀 검사 단계</h4>
+                                    <p class="text-xs md:text-sm text-on-surface-variant break-keep">QEEG 뇌파 검사 및 인지 검사 도구를 통한 개인별 인지 프로파일링 구축
                                     </p>
                                 </div>
                             </div>
@@ -322,8 +305,8 @@
                                     class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
                                     2</div>
                                 <div>
-                                    <h4 class="font-bold text-primary mb-1">맞춤형 훈련 설계</h4>
-                                    <p class="text-sm text-on-surface-variant">측정 결과에 따른 뇌 균형 장비 강도 조절 및 메타인지 워크북 구성</p>
+                                    <h4 class="font-bold text-base md:text-lg text-primary mb-1">맞춤형 훈련 설계</h4>
+                                    <p class="text-xs md:text-sm text-on-surface-variant break-keep">측정 결과에 따른 뇌 균형 장비 강도 조절 및 메타인지 워크북 구성</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
@@ -331,8 +314,8 @@
                                     class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
                                     3</div>
                                 <div>
-                                    <h4 class="font-bold text-primary mb-1">전문가 모니터링</h4>
-                                    <p class="text-sm text-on-surface-variant">인지치료 전문가의 1:1 피드백 및 보호자 상담 정례화</p>
+                                    <h4 class="font-bold text-base md:text-lg text-primary mb-1">전문가 모니터링</h4>
+                                    <p class="text-xs md:text-sm text-on-surface-variant break-keep">인지치료 전문가의 1:1 피드백 및 보호자 상담 정례화</p>
                                 </div>
                             </div>
                         </div>
@@ -340,23 +323,23 @@
                     <!-- Right: Voucher Matching -->
                     <div class="md:w-1/2 p-10 bg-secondary-container/10">
                         <div class="flex items-center justify-between mb-8">
-                            <h3 class="font-headline-lg text-2xl text-on-secondary-container flex items-center gap-2">
+                            <h3 class="font-headline-lg text-xl md:text-2xl text-on-secondary-container flex items-center gap-2">
                                 <span class="material-symbols-outlined">confirmation_number</span>
                                 연관 바우처 안내
                             </h3>
                             <span class="px-3 py-1 bg-secondary text-white text-xs rounded-full font-bold">지원 가능</span>
                         </div>
-                        <p class="text-on-surface-variant mb-8 font-body-lg">경제적 부담을 줄여드리기 위해 정부 및 지자체 바우처를 연계하여 프로그램을
+                        <p class="text-sm md:text-lg text-on-surface-variant mb-8 break-keep">경제적 부담을 줄여드리기 위해 정부 및 지자체 바우처를 연계하여 프로그램을
                             이용하실 수 있습니다.</p>
                         <div class="grid gap-4">
                             <!-- Voucher Card 1 -->
                             <div
                                 class="p-6 bg-white rounded-lg border-l-4 border-secondary shadow-sm hover:translate-x-2 transition-transform cursor-pointer">
                                 <div class="flex justify-between items-start mb-2">
-                                    <h4 class="font-bold text-on-background">성인재활 심리지원</h4>
+                                    <h4 class="font-bold text-sm md:text-base text-on-background">성인재활 심리지원</h4>
                                     <span class="material-symbols-outlined text-secondary">check_circle</span>
                                 </div>
-                                <p class="text-sm text-on-surface-variant">성인의 심리적 안정과 인지 기능 회복을 위한 지자체 바우처</p>
+                                <p class="text-xs md:text-sm text-on-surface-variant break-keep">성인의 심리적 안정과 인지 기능 회복을 위한 지자체 바우처</p>
                             </div>
                             <!-- Voucher Card 2 -->
                             <div
@@ -428,13 +411,52 @@
                         <li><a class="text-slate-500 hover:underline transition-all text-sm"
                                 href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185"
                                 target="_blank">찾아오시는 길</a></li>
-                        <li><a class="text-slate-500 hover:underline transition-all text-sm" href="#">문의하기</a></li>
+                        <li><a class="text-slate-500 hover:underline transition-all text-sm cursor-pointer"
+                                onclick="openContactModal()">문의하기</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Consultation Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[200] hidden items-center justify-center">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="relative w-full max-w-lg p-6">
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <div class="p-8">
+                    <div class="mb-6">
+                        <span class="text-primary font-bold text-sm uppercase tracking-widest">Contact Us</span>
+                        <h2 class="text-3xl font-bold text-primary mt-2">상담 문의</h2>
+                        <p class="text-slate-600 mt-4">우리 아이를 위한 맞춤형 상담, 지금 바로 시작하세요.</p>
+                    </div>
+                    <div class="pt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
+                            class="flex-1 bg-[#03C75A] text-white text-center py-4 rounded-xl font-bold hover:opacity-90 transition-all">네이버
+                            톡톡 상담</a>
+                        <button onclick="closeModal()"
+                            class="flex-1 bg-slate-100 text-slate-600 py-4 rounded-xl font-bold hover:bg-slate-200 transition-all">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
+        // 상담 문의 모달
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
         // 모바일 메뉴 토글
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');

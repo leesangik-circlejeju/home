@@ -7,15 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>동그라미교육원 - 경계선 지능 개선 프로그램</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -107,7 +99,7 @@
         }
 
         .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
         }
 
         .overlay-glass {
@@ -130,35 +122,28 @@
 </head>
 
 <body class="bg-background text-on-background antialiased">
-    <!-- TopAppBar -->
-    <!-- TopAppBar -->
-    <header
-        class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20 transition-all duration-300 ease-in-out">
+    <header class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20 transition-all duration-300 ease-in-out">
         <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-8 h-full">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center">
                 <!-- Mobile Menu Toggle -->
-                <button id="menu-toggle" class="md:hidden flex items-center p-2 text-primary" onclick="toggleMenu()">
+                <button id="menu-toggle" class="md:hidden flex items-center pr-2 text-primary" onclick="toggleMenu()">
                     <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
                 </button>
                 <a href="index.html" class="text-xl font-bold text-primary font-headline-lg tracking-tight shrink-0">동그라미교육원</a>
             </div>
-
+            
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="index.html#programs">프로그램 소개</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
-                    href="바우처지원.html#vouchers">바우처 안내</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#programs">프로그램 소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="바우처지원.html#vouchers">바우처 안내</a>
                 <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원
-                    소식</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는
-                    길</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원 소식</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는 길</a>
             </div>
 
             <div class="flex items-center gap-4">
                 <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
-                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">상담
-                    문의</a>
+                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">상담 문의</a>
             </div>
         </nav>
 
@@ -200,9 +185,9 @@
                     <span
                         class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-fixed-variant font-label-md text-label-md mb-6">느린
                         학습자를 위한 인지 활성화</span>
-                    <h1 class="font-hero-display text-hero-display text-primary stack-md">경계선 지능<br />혁신 개선 프로그램</h1>
-                    <p class="font-body-lg text-body-lg text-on-surface-variant stack-lg">
-                        뇌가소성 원리를 기반으로 한 CBT 시스템과 독자적인 반응 훈련을 통해<br />
+                    <h1 class="font-hero-display text-2xl sm:text-3xl md:text-5xl text-primary mb-6 leading-tight break-keep">경계선 지능<br class="hidden md:block" />혁신 개선 프로그램</h1>
+                    <p class="text-sm md:text-lg text-on-surface-variant leading-relaxed break-keep">
+                        뇌가소성 원리를 기반으로 한 CBT 시스템과 독자적인 반응 훈련을 통해<br class="hidden md:block" />
                         느린 학습자의 인지 능력을 근본적으로 활성화합니다.
                     </p>
                     <div class="flex gap-4">
@@ -225,9 +210,9 @@
         <!-- Core Technologies Bento Grid -->
         <section class="section-padding bg-surface-container-low">
             <div class="max-w-[1200px] mx-auto px-8">
-                <div class="text-center stack-lg">
-                    <h2 class="font-headline-lg text-headline-lg text-primary mb-4">핵심 기술 시스템</h2>
-                    <p class="font-body-lg text-body-lg text-on-surface-variant">정밀한 기술력이 따뜻한 변화를 만듭니다.</p>
+                <div class="text-center stack-lg px-4">
+                    <h2 class="font-headline-lg text-2xl md:text-4xl text-primary mb-4 break-keep">핵심 기술 시스템</h2>
+                    <p class="text-sm md:text-lg text-on-surface-variant break-keep">정밀한 기술력이 따뜻한 변화를 만듭니다.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- CBT Card -->
@@ -236,8 +221,8 @@
                         <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-6">
                             <span class="material-symbols-outlined text-primary" data-icon="computer">computer</span>
                         </div>
-                        <h3 class="font-headline-lg text-xl mb-4">CBT 시스템</h3>
-                        <p class="font-body-lg text-on-surface-variant flex-grow">컴퓨터 기반 인지 재활 시스템을 통해 개개인의 수준에 맞춘 맞춤형
+                        <h3 class="font-headline-lg text-lg md:text-xl mb-4">CBT 시스템</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant flex-grow break-keep">컴퓨터 기반 인지 재활 시스템을 통해 개개인의 수준에 맞춘 맞춤형
                             학습 경로를 자동 설계합니다.</p>
                     </div>
                     <!-- 0.3s Training Card -->
@@ -246,8 +231,8 @@
                         <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mb-6">
                             <span class="material-symbols-outlined text-white" data-icon="speed">speed</span>
                         </div>
-                        <h3 class="font-headline-lg text-xl mb-4">0.3초 반응 훈련</h3>
-                        <p class="font-body-lg text-primary-container flex-grow">뇌의 정보 처리 속도를 극대화하는 임계점 훈련으로, 인지 유연성과 판단
+                        <h3 class="font-headline-lg text-lg md:text-xl mb-4">0.3초 반응 훈련</h3>
+                        <p class="text-sm md:text-base text-primary-container flex-grow break-keep">뇌의 정보 처리 속도를 극대화하는 임계점 훈련으로, 인지 유연성과 판단
                             속도를 비약적으로 향상시킵니다.</p>
                     </div>
                     <!-- Dominant Acceleration Card -->
@@ -258,8 +243,8 @@
                             <span class="material-symbols-outlined text-secondary"
                                 data-icon="psychology">psychology</span>
                         </div>
-                        <h3 class="font-headline-lg text-xl mb-4">도미넌트 가속화</h3>
-                        <p class="font-body-lg text-on-surface-variant flex-grow">우세 인지 영역을 먼저 강화하여 하위 인지 영역까지 동반 상승시키는
+                        <h3 class="font-headline-lg text-lg md:text-xl mb-4">도미넌트 가속화</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant flex-grow break-keep">우세 인지 영역을 먼저 강화하여 하위 인지 영역까지 동반 상승시키는
                             뇌가소성 활성화 원리를 적용합니다.</p>
                     </div>
                 </div>
@@ -270,15 +255,15 @@
             <div class="max-w-[1200px] mx-auto px-8 grid md:grid-cols-5 gap-12 items-start">
                 <div class="md:col-span-3 space-y-12">
                     <div>
-                        <h2 class="font-headline-lg text-headline-lg text-primary mb-8">과학적 접근을 통한 근본적 변화</h2>
+                        <h2 class="font-headline-lg text-2xl md:text-4xl text-primary mb-8 break-keep">과학적 접근을 통한 근본적 변화</h2>
                         <div class="space-y-6">
                             <div
                                 class="flex gap-6 p-6 rounded-lg bg-surface-bright border-l-4 border-secondary shadow-sm">
                                 <span class="material-symbols-outlined text-secondary text-3xl shrink-0"
                                     data-icon="neurology">neurology</span>
                                 <div>
-                                    <h4 class="font-label-md text-lg text-on-surface mb-2">뇌가소성 원리 이용</h4>
-                                    <p class="font-body-lg text-on-surface-variant">반복적인 특정 자극을 통해 뇌의 신경망을 재구성하고 연결을
+                                    <h4 class="font-bold text-base md:text-lg text-on-surface mb-2">뇌가소성 원리 이용</h4>
+                                    <p class="text-sm md:text-base text-on-surface-variant break-keep">반복적인 특정 자극을 통해 뇌의 신경망을 재구성하고 연결을
                                         강화하여 학습 효율을 높입니다.</p>
                                 </div>
                             </div>
@@ -287,8 +272,8 @@
                                 <span class="material-symbols-outlined text-primary text-3xl shrink-0"
                                     data-icon="lightbulb">lightbulb</span>
                                 <div>
-                                    <h4 class="font-label-md text-lg text-on-surface mb-2">인지 기능 활성화</h4>
-                                    <p class="font-body-lg text-on-surface-variant">느린 학습자의 기저 인지(주의력, 기억력, 작업속도)를 활성화하여
+                                    <h4 class="font-bold text-base md:text-lg text-on-surface mb-2">인지 기능 활성화</h4>
+                                    <p class="text-sm md:text-base text-on-surface-variant break-keep">느린 학습자의 기저 인지(주의력, 기억력, 작업속도)를 활성화하여
                                         전반적인 학습 능력을 개선합니다.</p>
                                 </div>
                             </div>
@@ -303,8 +288,8 @@
                 <!-- Voucher Side Panel -->
                 <div
                     class="md:col-span-2 sticky top-28 bg-surface-container-high p-8 rounded-lg space-y-8 shadow-inner">
-                    <h3 class="font-headline-lg text-2xl text-primary">지원 가능한 바우처</h3>
-                    <p class="font-body-lg text-on-surface-variant">경제적 부담을 덜어드리는 교육 지원 혜택을 확인하세요.</p>
+                    <h3 class="font-headline-lg text-xl md:text-2xl text-primary">지원 가능한 바우처</h3>
+                    <p class="text-sm md:text-base text-on-surface-variant break-keep">경제적 부담을 덜어드리는 교육 지원 혜택을 확인하세요.</p>
                     <div class="space-y-4">
                         <div class="bg-white p-6 rounded-lg border border-primary-container">
                             <div class="flex justify-between items-start mb-4">
@@ -330,8 +315,8 @@
                         </div>
                     </div>
                     <a href="바우처지원.html"
-                        class="w-full bg-primary text-white py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-all flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined text-white" data-icon="help">help</span>
+                        class="w-full bg-primary text-white py-4 rounded-full font-bold hover:bg-secondary transition-all flex items-center justify-center gap-2 group shadow-lg">
+                        <span class="material-symbols-outlined text-white group-hover:scale-110 transition-transform">help</span>
                         바우처 자격 확인하기
                     </a>
                 </div>
@@ -378,7 +363,8 @@
                     <a class="text-sm text-slate-500 hover:underline transition-all"
                         href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185"
                         target="_blank">찾아오시는 길</a>
-                    <a class="text-sm text-slate-500 hover:underline transition-all" href="#">문의하기</a>
+                    <a class="text-sm text-slate-500 hover:underline transition-all cursor-pointer"
+                        onclick="openContactModal()">문의하기</a>
                 </nav>
                 <div class="flex gap-4">
                     <a class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all"
@@ -392,23 +378,39 @@
                 </div>
             </div>
         </div>
+    <script>
+        // 상담 문의 모달 열기
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
         // 모바일 메뉴 토글
         function toggleMenu() {
-        const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('menu-icon');
-        const isHidden = menu.classList.contains('hidden');
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const isHidden = menu.classList.contains('hidden');
 
-        if (isHidden) {
-        menu.classList.remove('hidden');
-        icon.innerText = 'close';
-        document.body.style.overflow = 'hidden';
-        } else {
-        menu.classList.add('hidden');
-        icon.innerText = 'menu';
-        document.body.style.overflow = 'auto';
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                icon.innerText = 'close';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('hidden');
+                icon.innerText = 'menu';
+                document.body.style.overflow = 'auto';
+            }
         }
-        }
-        </script>
+    </script>
 </body>
 
 </html>

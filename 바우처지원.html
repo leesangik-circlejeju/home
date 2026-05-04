@@ -5,12 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -98,7 +93,7 @@
     </script>
     <style>
         .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
         }
 
         .glass-card {
@@ -129,33 +124,28 @@
 <body class="bg-background text-on-background font-body-lg">
     <!-- TopNavBar -->
     <!-- TopNavBar -->
-    <header
-        class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20">
+    <header class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20 transition-all duration-300 ease-in-out">
         <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-8 h-full">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center">
                 <!-- Mobile Menu Toggle -->
-                <button id="menu-toggle" class="md:hidden flex items-center p-2 text-primary" onclick="toggleMenu()">
+                <button id="menu-toggle" class="md:hidden flex items-center pr-2 text-primary" onclick="toggleMenu()">
                     <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
                 </button>
                 <a href="index.html" class="text-xl font-bold text-primary font-headline-lg tracking-tight shrink-0">동그라미교육원</a>
             </div>
-
+            
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
-                    href="index.html#programs">프로그램 소개</a>
-                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="바우처지원.html#vouchers">바우처 안내</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#programs">프로그램 소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="바우처지원.html#vouchers">바우처 안내</a>
                 <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원
-                    소식</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는
-                    길</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원 소식</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는 길</a>
             </div>
 
             <div class="flex items-center gap-4">
                 <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
-                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">상담
-                    문의</a>
+                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">상담 문의</a>
             </div>
         </nav>
 
@@ -198,10 +188,10 @@
                 <span
                     class="inline-block px-4 py-1.5 bg-primary text-white rounded-full text-label-md font-label-md">Voucher
                     Support Guide</span>
-                <h1 class="text-hero-display font-hero-display text-primary tracking-tight">
-                    경제적 부담은 줄이고<br />혜택은 더 크게,<br /><span class="text-tertiary-container">바우처 지원 안내</span>
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-hero-display text-primary tracking-tight leading-tight break-keep">
+                    경제적 부담은 줄이고<br class="hidden md:block" />혜택은 더 크게,<br class="hidden md:block" /><span class="text-secondary font-bold">바우처 지원 안내</span>
                 </h1>
-                <p class="text-on-surface-variant text-body-lg max-w-lg">
+                <p class="text-sm md:text-lg text-on-surface-variant max-w-lg break-keep">
                     제주 동그라미교육원은 아이들의 성장을 지원하기 위해 다양한 국가 바우처 및 교육청 지원 사업의 공식 지정 기관입니다. 대상별 맞춤형 지원 혜택을 확인하세요.
                 </p>
             </div>
@@ -222,8 +212,8 @@
         <div class="container max-w-[1200px] mx-auto px-8">
             <div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-6">
                 <div>
-                    <h2 class="font-headline-lg text-4xl text-primary mb-4">정부 지원 바우처 안내</h2>
-                    <p class="text-on-surface-variant">제주도 교육청 및 보건복지부의 다양한 지원 사업을 확인하세요.</p>
+                    <h2 class="font-headline-lg text-2xl md:text-4xl text-primary mb-4 break-keep">정부 지원 바우처 안내</h2>
+                    <p class="text-sm md:text-lg text-on-surface-variant break-keep">제주도 교육청 및 보건복지부의 다양한 지원 사업을 확인하세요.</p>
                 </div>
                 <div class="flex flex-wrap gap-2" id="filter-group">
                     <button onclick="filterVouchers('all')"
@@ -245,39 +235,39 @@
     <!-- Application Guide -->
     <section class="section-padding bg-surface">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
-            <h2 class="text-headline-lg font-headline-lg text-primary mb-16">바우처 신청 프로세스</h2>
+            <h2 class="text-2xl md:text-4xl font-headline-lg text-primary mb-16 break-keep">바우처 신청 프로세스</h2>
             <div class="grid md:grid-cols-4 gap-8 relative">
                 <div class="flex flex-col items-center space-y-4 step-line relative">
                     <div
                         class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-primary">
                         <span class="material-symbols-outlined text-3xl">chat</span>
                     </div>
-                    <h4 class="font-bold text-primary">01. 상담 및 진단</h4>
-                    <p class="text-sm text-on-surface-variant">교육원 방문 상담 및<br />현재 상태 평가 수행</p>
+                    <h4 class="font-bold text-primary text-base md:text-lg">01. 상담 및 진단</h4>
+                    <p class="text-xs md:text-sm text-on-surface-variant break-keep">교육원 방문 상담 및<br class="hidden md:block" />현재 상태 평가 수행</p>
                 </div>
                 <div class="flex flex-col items-center space-y-4 step-line relative">
                     <div
                         class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-primary">
                         <span class="material-symbols-outlined text-3xl">description</span>
                     </div>
-                    <h4 class="font-bold text-primary">02. 서류 준비</h4>
-                    <p class="text-sm text-on-surface-variant">진단서, 소견서 등<br />필요 증빙 서류 구비</p>
+                    <h4 class="font-bold text-primary text-base md:text-lg">02. 서류 준비</h4>
+                    <p class="text-xs md:text-sm text-on-surface-variant break-keep">진단서, 소견서 등<br class="hidden md:block" />필요 증빙 서류 구비</p>
                 </div>
                 <div class="flex flex-col items-center space-y-4 step-line relative">
                     <div
                         class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-primary">
                         <span class="material-symbols-outlined text-3xl">how_to_reg</span>
                     </div>
-                    <h4 class="font-bold text-primary">03. 서비스 신청</h4>
-                    <p class="text-sm text-on-surface-variant">읍면동 주민센터 방문<br />또는 온라인 신청</p>
+                    <h4 class="font-bold text-primary text-base md:text-lg">03. 서비스 신청</h4>
+                    <p class="text-xs md:text-sm text-on-surface-variant break-keep">읍면동 주민센터 방문<br class="hidden md:block" />또는 온라인 신청</p>
                 </div>
                 <div class="flex flex-col items-center space-y-4">
                     <div
                         class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-primary">
                         <span class="material-symbols-outlined text-3xl">credit_card</span>
                     </div>
-                    <h4 class="font-bold text-primary">04. 바우처 발급</h4>
-                    <p class="text-sm text-on-surface-variant">카드 수령 후<br />교육원 서비스 시작</p>
+                    <h4 class="font-bold text-primary text-base md:text-lg">04. 바우처 발급</h4>
+                    <p class="text-xs md:text-sm text-on-surface-variant break-keep">카드 수령 후<br class="hidden md:block" />교육원 서비스 시작</p>
                 </div>
             </div>
         </div>
@@ -292,8 +282,8 @@
             class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-container opacity-5 rounded-full -translate-x-1/2 translate-y-1/2">
         </div>
         <div class="relative z-10 max-w-2xl mx-auto px-8 space-y-8">
-            <h2 class="font-headline-lg text-4xl text-white leading-tight">아이들의 더 밝은 내일을 위해 <br />지금 시작하세요</h2>
-            <p class="text-primary-container font-body-lg">전문가와의 1:1 상담을 통해 아이의 상태를 정확히 파악하는 것이 변화의 시작입니다.</p>
+            <h2 class="font-headline-lg text-2xl md:text-4xl text-white leading-tight break-keep">아이들의 더 밝은 내일을 위해 <br class="hidden md:block" />지금 시작하세요</h2>
+            <p class="text-primary-container text-sm md:text-lg break-keep">전문가와의 1:1 상담을 통해 아이의 상태를 정확히 파악하는 것이 변화의 시작입니다.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185?placePath=/home"
                     target="_blank"
@@ -307,9 +297,9 @@
     <!-- Footer -->
     <footer class="w-full py-16 border-t border-slate-200 bg-slate-50">
         <div class="max-w-[1200px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="space-y-6">
-                <div class="font-bold text-lg text-slate-800">동그라미교육원</div>
-                <p class="text-sm leading-relaxed text-slate-500 max-w-sm">
+            <div class="space-y-6 text-center md:text-left">
+                <div class="font-bold text-base md:text-lg text-slate-800">동그라미교육원</div>
+                <p class="text-xs md:text-sm leading-relaxed text-slate-500 max-w-sm mx-auto md:mx-0 break-keep">
                     우리는 기술과 따뜻한 마음을 결합하여 모든 아이들이 차별 없이 배우고 성장할 수 있는 세상을 꿈꿉니다. 인지 및 언어 재활의 새로운 기준을 제시합니다.
                 </p>
                 <p class="text-sm text-slate-400">© 2024 동그라미교육원. All rights reserved.</p>
@@ -472,30 +462,30 @@
 
             // Render
             grid.innerHTML = filtered.map(v => `
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-outline-variant/30 hover:shadow-md transition-shadow">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col h-full">
                     <div class="flex justify-between items-start mb-6">
                         <span class="text-secondary font-bold text-sm uppercase tracking-widest">${v.subtitle}</span>
-                        ${v.tag ? `<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded text-xs font-bold">${v.tag}</div>` : ''}
+                        ${v.tag ? `<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded text-[10px] font-bold">${v.tag}</div>` : ''}
                     </div>
-                    <h3 class="text-2xl font-bold text-primary mb-4">${v.title}</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between border-b border-surface-variant pb-2">
-                            <span class="text-on-surface-variant">지원 금액</span>
+                    <h3 class="text-2xl font-bold text-primary mb-6 group-hover:text-secondary transition-colors">${v.title}</h3>
+                    <div class="space-y-4 mb-8 flex-grow">
+                        <div class="flex justify-between border-b border-slate-50 pb-2">
+                            <span class="text-slate-500 text-sm">지원 금액</span>
                             <span class="text-primary font-bold">${v.price}</span>
                         </div>
-                        <div class="flex justify-between border-b border-surface-variant pb-2">
-                            <span class="text-on-surface-variant">지원 대상</span>
-                            <span class="text-on-surface">${v.target}</span>
+                        <div class="flex justify-between border-b border-slate-50 pb-2">
+                            <span class="text-slate-500 text-sm">지원 대상</span>
+                            <span class="text-slate-700 text-sm font-medium">${v.target}</span>
                         </div>
                         <div class="flex flex-col gap-1">
-                            <span class="text-on-surface-variant">필요 서류</span>
-                            <span class="text-on-surface text-sm">${v.documents}</span>
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            <span class="text-on-surface-variant">서비스 내용</span>
-                            <span class="text-on-surface text-sm">${v.service}</span>
+                            <span class="text-slate-500 text-sm">필요 서류</span>
+                            <span class="text-slate-600 text-xs leading-relaxed">${v.documents}</span>
                         </div>
                     </div>
+                    <button onclick="openContactModal()" class="w-full bg-slate-50 text-primary py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn">
+                        상담 문의하기
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
                 </div>
             `).join('');
         }

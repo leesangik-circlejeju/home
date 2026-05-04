@@ -7,7 +7,7 @@
     <title>기관소개 - 동그라미교육원</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script id="tailwind-config">
@@ -53,20 +53,24 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+        }
     </style>
 </head>
 
-<body class="bg-slate-50 font-sans text-slate-900">
-    <!-- Header -->
+<body class="bg-background text-on-background font-body-lg">
     <header
-        class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20 transition-all">
+        class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20 transition-all duration-300 ease-in-out">
         <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-8 h-full">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center">
                 <!-- Mobile Menu Toggle -->
-                <button id="menu-toggle" class="md:hidden flex items-center p-2 text-primary" onclick="toggleMenu()">
+                <button id="menu-toggle" class="md:hidden flex items-center pr-2 text-primary" onclick="toggleMenu()">
                     <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
                 </button>
-                <a href="index.html" class="text-xl font-bold text-primary font-headline tracking-tight shrink-0">동그라미교육원</a>
+                <a href="index.html"
+                    class="text-xl font-bold text-primary font-headline-lg tracking-tight shrink-0">동그라미교육원</a>
             </div>
 
             <!-- Desktop Menu -->
@@ -75,7 +79,7 @@
                     href="index.html#programs">프로그램 소개</a>
                 <a class="text-slate-600 hover:text-primary transition-colors font-medium"
                     href="바우처지원.html#vouchers">바우처 안내</a>
-                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="기관소개.html">교육원소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
                 <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원
                     소식</a>
                 <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는
@@ -129,9 +133,8 @@
             </div>
             <div class="container max-w-[1200px] mx-auto px-8 relative z-10">
                 <div class="max-w-2xl text-white">
-                    <h1 class="text-5xl font-hero-display font-bold mb-6 leading-tight">아이들의 잠재력을 깨우는<br>언어,인지 재활센터</h1>
-                    <p class="text-xl opacity-90 leading-relaxed font-light">동그라미교육원은 과학적인 데이터와 임상적 경험을 결합하여<br>아이들의 행복한
-                        내일을 생각합니다.</p>
+                    <h1 class="text-2xl sm:text-3xl md:text-5xl font-hero-display font-bold mb-6 leading-tight break-keep">아이들의 잠재력을 깨우는<br class="hidden md:block">언어,인지 재활센터</h1>
+                    <p class="text-base md:text-xl opacity-90 leading-relaxed font-light break-keep">동그라미교육원은 과학적인 데이터와 임상적 경험을 결합하여<br class="hidden md:block">아이들의 행복한 내일을 생각합니다.</p>
                 </div>
             </div>
         </section>
@@ -142,30 +145,30 @@
                 <div class="flex flex-col lg:flex-row gap-16 items-center">
                     <div class="lg:w-1/2 space-y-8 scroll-reveal">
                         <div
-                            class="inline-block px-4 py-1 rounded-full bg-primary-container text-primary font-bold text-sm">
+                            class="inline-block px-4 py-1 rounded-full bg-primary-container text-primary font-bold text-xs md:text-sm">
                             Our Philosophy</div>
-                        <h2 class="text-4xl font-headline text-primary leading-tight">High-Tech Humanism:<br>첨단 기술과 재활의
+                        <h2 class="text-2xl md:text-4xl font-headline text-primary leading-tight break-keep">High-Tech Humanism:<br class="hidden md:block">첨단 기술과 재활의
                             조화로 아이들에게 희망을</h2>
-                        <p class="text-lg text-on-surface-variant leading-relaxed">
-                            동그라미교육원은 제주 지역의 학습 및 신경발달 어려움을 겪는 아이들을 위한 전문 연구센터입니다.최첨단 소프트웨어를 활용한 인지 재활 시스템을 통해 아이의 숨겨진 학습
+                        <p class="text-sm md:text-lg text-on-surface-variant leading-relaxed break-keep">
+                            동그라미교육원은 제주 지역의 학습 및 신경발달 어려움을 겪는 아이들을 위한 전문 연구센터입니다. 최첨단 소프트웨어를 활용한 인지 재활 시스템을 통해 아이의 숨겨진 학습
                             잠재력을 최대한으로 끌어올리는 것을 목표로 합니다.
                         </p>
                         <div class="grid grid-cols-2 gap-8 pt-4">
                             <div>
-                                <div class="text-3xl font-bold text-primary mb-2">최첨단 시스템</div>
-                                <div class="text-sm text-slate-500">최적화된 소프트웨어를 활용</div>
+                                <div class="text-lg md:text-3xl font-bold text-primary mb-2 break-keep">최첨단 시스템</div>
+                                <div class="text-xs md:text-sm text-slate-500 break-keep">최적화된 소프트웨어를 활용</div>
                             </div>
                             <div>
-                                <div class="text-3xl font-bold text-primary mb-2">과학적 언어치료</div>
-                                <div class="text-sm text-slate-500">첨단기술을 접목한 언어치료</div>
+                                <div class="text-lg md:text-3xl font-bold text-primary mb-2 break-keep">과학적 언어치료</div>
+                                <div class="text-xs md:text-sm text-slate-500 break-keep">첨단기술을 접목한 언어치료</div>
                             </div>
                             <div>
-                                <div class="text-3xl font-bold text-primary mb-2">개별맞춤 솔루션</div>
-                                <div class="text-sm text-slate-500">맞춤형 재활 프로그램</div>
+                                <div class="text-lg md:text-3xl font-bold text-primary mb-2 break-keep">개별맞춤 솔루션</div>
+                                <div class="text-xs md:text-sm text-slate-500 break-keep">맞춤형 재활 프로그램</div>
                             </div>
                             <div>
-                                <div class="text-3xl font-bold text-primary mb-2">전문적인 연구기반</div>
-                                <div class="text-sm text-slate-500">효과적인 솔루션 제공</div>
+                                <div class="text-lg md:text-3xl font-bold text-primary mb-2 break-keep">전문적인 연구기반</div>
+                                <div class="text-xs md:text-sm text-slate-500 break-keep">효과적인 솔루션 제공</div>
                             </div>
                         </div>
                     </div>
@@ -183,24 +186,24 @@
         <section class="py-section-padding bg-slate-50">
             <div class="container max-w-[1200px] mx-auto px-8">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-headline text-primary mb-4">동그라미의 3대 핵심 가치</h2>
-                    <p class="text-on-surface-variant">우리가 아이들을 대하는 변함없는 기준입니다.</p>
+                    <h2 class="text-2xl md:text-3xl font-headline text-primary mb-4 break-keep">동그라미의 3대 핵심 가치</h2>
+                    <p class="text-sm md:text-lg text-on-surface-variant break-keep">우리가 아이들을 대하는 변함없는 기준입니다.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-md transition-all scroll-reveal">
                         <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mb-8">
                             <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-primary mb-4">근거 중심 전문성</h3>
-                        <p class="text-on-surface-variant leading-relaxed">최신 뇌과학 이론과 검증된 임상 프로토콜을 바탕으로 정밀한 개별 맞춤 솔루션을
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-4 break-keep">근거 중심 전문성</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed break-keep">최신 뇌과학 이론과 검증된 임상 프로토콜을 바탕으로 정밀한 개별 맞춤 솔루션을
                             설계합니다.</p>
                     </div>
                     <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-md transition-all scroll-reveal">
                         <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mb-8">
                             <span class="material-symbols-outlined text-3xl">psychology</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-primary mb-4">첨단 기술 융합</h3>
-                        <p class="text-on-surface-variant leading-relaxed">최첨단 소프트웨어와 바이오피드백 장비를 도입하여 재활의 효율성을 극대화합니다.
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-4 break-keep">첨단 기술 융합</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed break-keep">최첨단 소프트웨어와 바이오피드백 장비를 도입하여 재활의 효율성을 극대화합니다.
                         </p>
                     </div>
                     <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-md transition-all scroll-reveal"
@@ -208,8 +211,8 @@
                         <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mb-8">
                             <span class="material-symbols-outlined text-3xl">favorite</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-primary mb-4">진정성 있는 소통</h3>
-                        <p class="text-on-surface-variant leading-relaxed">아이의 작은 변화에도 기뻐하며, 학부모님과 긴밀히 소통하여 가정 내 훈련까지 함께
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-4 break-keep">진정성 있는 소통</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed break-keep">아이의 작은 변화에도 기뻐하며, 학부모님과 긴밀히 소통하여 가정 내 훈련까지 함께
                             고민합니다.</p>
                     </div>
                 </div>
@@ -220,101 +223,134 @@
         <section class="py-section-padding bg-slate-50 overflow-hidden">
             <div class="container max-w-[1200px] mx-auto px-8">
                 <div class="text-center mb-16 scroll-reveal">
-                    <h2 class="text-3xl md:text-4xl font-headline text-primary mb-6">혹시 우리 아이 때문에 걱정이 많으신가요?</h2>
-                    <p class="text-on-surface-variant max-w-2xl mx-auto">부모님의 마음으로 아이의 어려움을 세심히 살피고, 과학적인 솔루션으로 함께 길을
+                    <h2 class="text-2xl md:text-4xl font-headline-lg text-primary mb-6 break-keep">혹시 우리 아이 때문에 걱정이 많으신가요?</h2>
+                    <p class="text-sm md:text-lg text-on-surface-variant max-w-2xl mx-auto break-keep px-4">부모님의 마음으로 아이의 어려움을 세심히 살피고, 과학적인 솔루션으로 함께 길을
                         찾겠습니다.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal">
                     <!-- Concern Box 1 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group">
+                    <div onclick="location.href='난독개선프로그램.html'"
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group cursor-pointer flex flex-col h-full">
                         <div class="text-primary mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                            <span class="material-symbols-outlined text-4xl">난독증</span>
+                            <span class="material-symbols-outlined text-4xl">menu_book</span>
                         </div>
-                        <p class="text-slate-700 leading-relaxed font-medium">책 읽는 것을 힘들어하고, 글자를 헷갈려 하나요? <br><span
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4 flex-grow">책 읽는 것을 힘들어하고, 글자를 헷갈려 하나요? <br><span
                                 class="text-primary text-sm font-bold">읽기장애</span></p>
+                        <div class="text-primary text-xs font-bold flex items-center opacity-0 group-hover:opacity-100 transition-all">
+                            <span class="group-hover:hidden">상세 보기</span>
+                            <span class="hidden group-hover:inline">상세페이지 이동하기</span>
+                            <span class="material-symbols-outlined text-xs ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </div>
                     </div>
                     <!-- Concern Box 2 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group">
-                        <div class="text-primary mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                            <span class="material-symbols-outlined text-4xl">난산증</span>
+                    <div onclick="location.href='첨단인지재활프로그램.html'"
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:bg-slate-50 hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer flex flex-col h-full">
+                        <div class="text-primary mb-4 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">
+                            <span class="material-symbols-outlined text-4xl">calculate</span>
                         </div>
-                        <p class="text-slate-700 leading-relaxed font-medium">숫자를 어려워하고, 셈을 잘 못하나요? <br><span
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4 flex-grow group-hover:text-primary transition-colors">숫자를 어려워하고, 셈을 잘 못하나요? <br><span
                                 class="text-primary text-sm font-bold">계산장애</span></p>
+                        <div class="text-primary text-xs font-bold flex items-center opacity-0 group-hover:opacity-100 transition-all">
+                            상세 보기 <span class="material-symbols-outlined text-xs ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </div>
                     </div>
                     <!-- Concern Box 3 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group">
+                    <div onclick="location.href='경계선지능.html'"
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group cursor-pointer flex flex-col h-full">
                         <div class="text-primary mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                            <span class="material-symbols-outlined text-4xl">학습지체</span>
+                            <span class="material-symbols-outlined text-4xl">speed</span>
                         </div>
-                        <p class="text-slate-700 leading-relaxed font-medium">또래보다 학습 속도가 느린 것 같아 답답하신가요? <br><span
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4 flex-grow">또래보다 학습 속도가 느린 것 같아 답답하신가요? <br><span
                                 class="text-primary text-sm font-bold">경계선지능</span></p>
+                        <div class="text-primary text-xs font-bold flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            상세 보기 <span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                        </div>
                     </div>
                     <!-- Concern Box 4 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group">
+                    <div onclick="location.href='경계선지능.html'"
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group cursor-pointer flex flex-col h-full">
                         <div class="text-primary mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                            <span class="material-symbols-outlined text-4xl">문해력저하</span>
+                            <span class="material-symbols-outlined text-4xl">edit_note</span>
                         </div>
-                        <p class="text-slate-700 leading-relaxed font-medium">책을 읽어도 이해를 잘 못하는 것 같나요? <br><span
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4 flex-grow">책을 읽어도 이해를 잘 못하는 것 같나요? <br><span
                                 class="text-primary text-sm font-bold">경계선지능</span></p>
+                        <div class="text-primary text-xs font-bold flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            상세 보기 <span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                        </div>
                     </div>
                     <!-- Concern Box 5 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group">
+                    <div onclick="location.href='ADHD.html'"
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group cursor-pointer flex flex-col h-full">
                         <div class="text-primary mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                            <span class="material-symbols-outlined text-4xl">주의력 결핍</span>
+                            <span class="material-symbols-outlined text-4xl">psychology_alt</span>
                         </div>
-                        <p class="text-slate-700 leading-relaxed font-medium">집중력이 떨어지고, 산만해서 학습에 어려움을 겪나요? <br><span
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4 flex-grow">집중력이 떨어지고, 산만해서 학습에 어려움을 겪나요? <br><span
                                 class="text-primary text-sm font-bold">(ADHD)</span></p>
+                        <div class="text-primary text-xs font-bold flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            상세 보기 <span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                        </div>
                     </div>
                     <!-- Concern Box 6 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group">
+                    <div onclick="location.href='언어능력향상.html'"
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group cursor-pointer flex flex-col h-full">
                         <div class="text-primary mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                            <span class="material-symbols-outlined text-4xl">언어발달지체</span>
+                            <span class="material-symbols-outlined text-4xl">record_voice_over</span>
                         </div>
-                        <p class="text-slate-700 leading-relaxed font-medium">언어 발달이 늦거나, 의사소통에 어려움이 있나요? <br><span
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4 flex-grow">언어 발달이 늦거나, 의사소통에 어려움이 있나요? <br><span
                                 class="text-primary text-sm font-bold">(언어(의사소통)장애)</span></p>
+                        <div class="text-primary text-xs font-bold flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            상세 보기 <span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                        </div>
                     </div>
                     <!-- Concern Box 7 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group">
+                    <div onclick="location.href='첨단인지재활프로그램.html'"
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group cursor-pointer flex flex-col h-full">
                         <div class="text-primary mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                            <span class="material-symbols-outlined text-4xl">사회인지향상</span>
+                            <span class="material-symbols-outlined text-4xl">diversity_1</span>
                         </div>
-                        <p class="text-slate-700 leading-relaxed font-medium">사회성 발달에 어려움을 느끼고, 특정 행동을 반복하나요? <br><span
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4 flex-grow">사회성 발달에 어려움을 느끼고, 특정 행동을 반복하나요? <br><span
                                 class="text-primary text-sm font-bold">(자폐스펙트럼장애)</span></p>
+                        <div class="text-primary text-xs font-bold flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            상세 보기 <span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                        </div>
                     </div>
                     <!-- Concern Box 8 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group">
+                    <div onclick="location.href='첨단인지재활프로그램.html'"
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group cursor-pointer flex flex-col h-full">
                         <div class="text-primary mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
-                            <span class="material-symbols-outlined text-4xl">운동능력저하</span>
-                            <!-- Bottom CTA -->
-                            <section class="bg-primary mt-24 py-20 text-center relative overflow-hidden">
-                                <div
-                                    class="absolute top-0 right-0 w-64 h-64 bg-accent-orange opacity-10 rounded-full translate-x-1/2 -translate-y-1/2">
-                                </div>
-                                <div
-                                    class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-container opacity-5 rounded-full -translate-x-1/2 translate-y-1/2">
-                                </div>
-                                <div class="relative z-10 max-w-2xl mx-auto px-8 space-y-8">
-                                    <h2 class="font-headline-lg text-4xl text-white leading-tight">아이들의 더 밝은 내일을 위해
-                                        <br />지금 시작하세요</h2>
-                                    <p class="text-primary-container font-body-lg">전문가와의 1:1 상담을 통해 아이의 상태를 정확히 파악하는 것이
-                                        변화의 시작입니다.</p>
-                                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                        <a href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185?placePath=/home"
-                                            target="_blank"
-                                            class="bg-accent-orange text-white px-10 py-5 rounded-full font-headline-lg text-lg shadow-xl hover:scale-105 transition-transform inline-block">
-                                            지금 바로 예약하기
-                                        </a>
-                                    </div>
-                                </div>
-                            </section>
+                            <span class="material-symbols-outlined text-4xl">directions_run</span>
+                        </div>
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4 flex-grow">신체 조절이나 대소근육 발달이 더딘 것 같나요? <br><span
+                                class="text-primary text-sm font-bold">(운동발달지연)</span></p>
+                        <div class="text-primary text-xs font-bold flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            상세 보기 <span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="bg-primary py-20 text-center relative overflow-hidden">
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-orange-400 opacity-10 rounded-full translate-x-1/2 -translate-y-1/2">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 opacity-5 rounded-full -translate-x-1/2 translate-y-1/2">
+            </div>
+            <div class="relative z-10 max-w-2xl mx-auto px-8 space-y-8">
+                <h2 class="font-headline text-4xl text-white leading-tight">아이들의 더 밝은 내일을 위해 <br />지금 시작하세요</h2>
+                <p class="text-blue-100 text-lg">전문가와의 1:1 상담을 통해 아이의 상태를 정확히 파악하는 것이 변화의 시작입니다.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185?placePath=/home"
+                        target="_blank"
+                        class="bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all inline-block group min-w-[240px] justify-center">
+                        <span class="group-hover:hidden">지금 바로 예약하기</span>
+                        <span class="hidden group-hover:inline">지금 바로 예약 이동하기</span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- Footer -->
     <footer class="w-full py-16 border-t border-slate-200 bg-slate-50">
@@ -354,9 +390,9 @@
             <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
                 <div class="p-8">
                     <div class="mb-6">
-                        <span class="text-primary font-bold text-sm uppercase tracking-widest">Contact Us</span>
-                        <h2 class="text-3xl font-bold text-primary mt-2">상담 문의</h2>
-                        <p class="text-slate-600 mt-4">우리 아이를 위한 맞춤형 상담, 지금 바로 시작하세요.</p>
+                        <span class="text-primary font-bold text-xs md:text-sm uppercase tracking-widest">Contact Us</span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-primary mt-2 break-keep">상담 문의</h2>
+                        <p class="text-sm md:text-base text-slate-600 mt-4 break-keep">우리 아이를 위한 맞춤형 상담, 지금 바로 시작하세요.</p>
                     </div>
                     <div class="pt-8 flex flex-col sm:flex-row gap-4">
                         <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
@@ -371,6 +407,13 @@
     </div>
 
     <script>
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
         function closeModal() {
             const modal = document.getElementById('contactModal');
             modal.classList.add('hidden');

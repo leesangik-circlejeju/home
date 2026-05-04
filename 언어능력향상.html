@@ -6,15 +6,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&amp;family=Noto+Sans+KR:wght@400;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -113,35 +105,28 @@
 </head>
 
 <body class="font-body-lg text-body-lg">
-    <!-- TopAppBar -->
-    <!-- Header -->
-    <header
-        class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20">
+    <header class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20 transition-all duration-300 ease-in-out">
         <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-8 h-full">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center">
                 <!-- Mobile Menu Toggle -->
-                <button id="menu-toggle" class="md:hidden flex items-center p-2 text-primary" onclick="toggleMenu()">
+                <button id="menu-toggle" class="md:hidden flex items-center pr-2 text-primary" onclick="toggleMenu()">
                     <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
                 </button>
                 <a href="index.html" class="text-xl font-bold text-primary font-headline-lg tracking-tight shrink-0">동그라미교육원</a>
             </div>
-
+            
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="index.html#programs">프로그램 소개</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
-                    href="바우처지원.html#vouchers">바우처 안내</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#programs">프로그램 소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="바우처지원.html#vouchers">바우처 안내</a>
                 <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원
-                    소식</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는
-                    길</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원 소식</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는 길</a>
             </div>
 
             <div class="flex items-center gap-4">
                 <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
-                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">상담
-                    문의</a>
+                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">상담 문의</a>
             </div>
         </nav>
 
@@ -188,8 +173,8 @@
                     <span
                         class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md">High-Tech
                         Warmth</span>
-                    <h1 class="text-white font-hero-display text-hero-display">언어능력 향상<br />훈련 프로그램</h1>
-                    <p class="text-primary-fixed text-body-lg leading-relaxed max-w-lg">
+                    <h1 class="text-white font-hero-display text-2xl sm:text-3xl md:text-5xl leading-tight break-keep">언어능력 향상<br class="hidden md:block" />훈련 프로그램</h1>
+                    <p class="text-primary-fixed text-sm md:text-lg leading-relaxed max-w-lg break-keep">
                         언어심리학적 메커니즘을 기반으로 한 실시간 음성 교정 시스템으로 아이들의 숨겨진 목소리를 찾아냅니다.
                     </p>
                 </div>
@@ -198,9 +183,9 @@
         <!-- Technical Highlights (Bento Grid Style) -->
         <section class="max-w-[1200px] mx-auto px-8 py-section-padding">
             <div class="flex flex-col gap-stack-lg">
-                <div class="text-center space-y-4">
-                    <h2 class="font-headline-lg text-headline-lg text-primary">핵심 기술 아키텍처</h2>
-                    <p class="text-outline">과학적 데이터 분석을 통한 정밀한 언어 훈련 시스템</p>
+                <div class="text-center space-y-4 px-4">
+                    <h2 class="font-headline-lg text-2xl md:text-4xl text-primary break-keep">핵심 기술 아키텍처</h2>
+                    <p class="text-sm md:text-lg text-outline break-keep">과학적 데이터 분석을 통한 정밀한 언어 훈련 시스템</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
                     <!-- Tech Card 1 -->
@@ -210,8 +195,8 @@
                             <span class="material-symbols-outlined"
                                 style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
                         </div>
-                        <h3 class="font-headline-lg text-[1.5rem] text-primary">스피치마스터</h3>
-                        <p class="text-on-surface-variant">발음의 명료도와 조음 위치를 실시간으로 추적하여 시각적 피드백을 제공하는 조음 정밀 교정 시스템입니다.</p>
+                        <h3 class="font-headline-lg text-xl md:text-2xl text-primary">스피치마스터</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant break-keep">발음의 명료도와 조음 위치를 실시간으로 추적하여 시각적 피드백을 제공하는 조음 정밀 교정 시스템입니다.</p>
                     </div>
                     <!-- Tech Card 2 -->
                     <div
@@ -220,8 +205,8 @@
                             <span class="material-symbols-outlined"
                                 style="font-variation-settings: 'FILL' 1;">equalizer</span>
                         </div>
-                        <h3 class="font-headline-lg text-[1.5rem] text-primary">피치마스터</h3>
-                        <p class="text-on-surface-variant">음성의 높낮이와 리듬감을 분석하여 언어의 감정 표현력과 자연스러운 억양 형성을 돕는 핵심 엔진입니다.</p>
+                        <h3 class="font-headline-lg text-xl md:text-2xl text-primary">피치마스터</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant break-keep">음성의 높낮이와 리듬감을 분석하여 언어의 감정 표현력과 자연스러운 억양 형성을 돕는 핵심 엔진입니다.</p>
                     </div>
                     <!-- Tech Card 3 -->
                     <div
@@ -231,8 +216,8 @@
                             <span class="material-symbols-outlined"
                                 style="font-variation-settings: 'FILL' 1;">analytics</span>
                         </div>
-                        <h3 class="font-headline-lg text-[1.5rem] text-primary">음성 스펙트럼 분석</h3>
-                        <p class="text-on-surface-variant">초당 1,000회 이상의 음성 샘플링을 통해 발성의 강도와 지속 시간을 정밀하게 분석하여 맞춤형 리포트를
+                        <h3 class="font-headline-lg text-xl md:text-2xl text-primary">음성 스펙트럼 분석</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant break-keep">초당 1,000회 이상의 음성 샘플링을 통해 발성의 강도와 지속 시간을 정밀하게 분석하여 맞춤형 리포트를
                             생성합니다.</p>
                     </div>
                 </div>
@@ -248,8 +233,8 @@
                 </div>
                 <div class="space-y-stack-lg">
                     <div class="space-y-4">
-                        <h2 class="font-headline-lg text-headline-lg text-primary">언어심리학 기반<br />실시간 음성 교정</h2>
-                        <p class="text-on-surface-variant leading-relaxed">
+                        <h2 class="font-headline-lg text-2xl md:text-4xl text-primary break-keep">언어심리학 기반<br class="hidden md:block" />실시간 음성 교정</h2>
+                        <p class="text-sm md:text-lg text-on-surface-variant leading-relaxed break-keep">
                             단순한 발음 반복 훈련이 아닙니다. 아이의 인지 발달 단계와 정서적 상태를 고려한 언어심리학적 접근을 통해, 가장 편안한 상태에서 자연스러운 언어 구사가 가능하도록
                             설계되었습니다. 실시간으로 변하는 음성 파형을 보며 아이들은 자신의 목소리를 게임처럼 재미있게 조절하는 법을 배웁니다.
                         </p>
@@ -259,16 +244,16 @@
                             <span class="material-symbols-outlined text-secondary"
                                 style="font-variation-settings: 'FILL' 1;">check_circle</span>
                             <div>
-                                <h4 class="font-bold text-primary">심리적 안정감 우선</h4>
-                                <p class="text-sm text-outline">기술적 훈련 전, 아동과의 라포 형성을 통한 정서적 지지 기반의 교육</p>
+                                <h4 class="font-bold text-base md:text-lg text-primary">심리적 안정감 우선</h4>
+                                <p class="text-xs md:text-sm text-outline break-keep">기술적 훈련 전, 아동과의 라포 형성을 통한 정서적 지지 기반의 교육</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
                             <span class="material-symbols-outlined text-secondary"
                                 style="font-variation-settings: 'FILL' 1;">check_circle</span>
                             <div>
-                                <h4 class="font-bold text-primary">데이터 기반 성장 리포트</h4>
-                                <p class="text-sm text-outline">매 세션 종료 후 스펙트럼 데이터를 통한 향상도 수치화 제공</p>
+                                <h4 class="font-bold text-base md:text-lg text-primary">데이터 기반 성장 리포트</h4>
+                                <p class="text-xs md:text-sm text-outline break-keep">매 세션 종료 후 스펙트럼 데이터를 통한 향상도 수치화 제공</p>
                             </div>
                         </div>
                     </div>
@@ -281,18 +266,16 @@
                 <div class="absolute top-0 right-0 w-64 h-64 bg-secondary-container/20 blur-[100px] rounded-full"></div>
                 <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
-                        <h2 class="font-headline-lg text-headline-lg">부담을 덜어드리는<br />바우처 매칭 서비스</h2>
-                        <p class="text-primary-fixed/80">
+                        <h2 class="font-headline-lg text-2xl md:text-4xl break-keep">부담을 덜어드리는<br class="hidden md:block" />바우처 매칭 서비스</h2>
+                        <p class="text-primary-fixed/80 text-sm md:text-lg break-keep">
                             동그라미교육원은 공공 기관과 연계하여 학부모님의 경제적 부담을 지원합니다. 해당 프로그램은 아래 바우처를 통해 혜택을 받으실 수 있습니다.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-6 py-2 bg-secondary text-white rounded-full font-label-md text-label-md flex items-center gap-2">
+                            <span class="px-5 py-2 bg-white/10 border border-white/20 rounded-full text-xs font-bold text-white hover:bg-white hover:text-primary transition-all cursor-default flex items-center gap-2">
                                 <span class="material-symbols-outlined text-sm">confirmation_number</span>
                                 발달재활 서비스
                             </span>
-                            <span
-                                class="px-6 py-2 bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-label-md text-label-md flex items-center gap-2">
+                            <span class="px-5 py-2 bg-white/10 border border-white/20 rounded-full text-xs font-bold text-white hover:bg-white hover:text-primary transition-all cursor-default flex items-center gap-2">
                                 <span class="material-symbols-outlined text-sm">confirmation_number</span>
                                 아동청소년 심리지원
                             </span>
@@ -342,7 +325,8 @@
                     <a class="text-slate-500 hover:underline text-sm transition-all"
                         href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185"
                         target="_blank">찾아오시는 길</a>
-                    <a class="text-slate-500 hover:underline text-sm transition-all" href="#">문의하기</a>
+                    <a class="text-slate-500 hover:underline text-sm transition-all cursor-pointer"
+                        onclick="openContactModal()">문의하기</a>
                 </nav>
                 <div class="flex gap-4">
                     <span
@@ -355,7 +339,45 @@
             </div>
         </div>
     </footer>
+
+    <!-- Consultation Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[200] hidden items-center justify-center">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="relative w-full max-w-lg p-6">
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <div class="p-8">
+                    <div class="mb-6">
+                        <span class="text-primary font-bold text-sm uppercase tracking-widest">Contact Us</span>
+                        <h2 class="text-3xl font-bold text-primary mt-2">상담 문의</h2>
+                        <p class="text-slate-600 mt-4">우리 아이를 위한 맞춤형 상담, 지금 바로 시작하세요.</p>
+                    </div>
+                    <div class="pt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
+                            class="flex-1 bg-[#03C75A] text-white text-center py-4 rounded-xl font-bold hover:opacity-90 transition-all">네이버
+                            톡톡 상담</a>
+                        <button onclick="closeModal()"
+                            class="flex-1 bg-slate-100 text-slate-600 py-4 rounded-xl font-bold hover:bg-slate-200 transition-all">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
+        // 상담 문의 모달
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
         // 모바일 메뉴 토글
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');

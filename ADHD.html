@@ -5,12 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&amp;family=Noto+Sans+KR:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
         tailwind.config = {
@@ -99,7 +94,7 @@
     </script>
     <style>
         .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
         }
 
         .glass-card {
@@ -118,9 +113,9 @@
 <body class="font-body-lg text-on-surface">
     <header class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-[20px] border-b border-slate-200/50 h-20 transition-all duration-300 ease-in-out">
         <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-8 h-full">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center">
                 <!-- Mobile Menu Toggle -->
-                <button id="menu-toggle" class="md:hidden flex items-center p-2 text-primary" onclick="toggleMenu()">
+                <button id="menu-toggle" class="md:hidden flex items-center pr-2 text-primary" onclick="toggleMenu()">
                     <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
                 </button>
                 <a href="index.html" class="text-xl font-bold text-primary font-headline-lg tracking-tight shrink-0">동그라미교육원</a>
@@ -142,25 +137,32 @@
         </nav>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xl flex flex-col p-6 space-y-4 md:hidden animate-in slide-in-from-top duration-300">
-            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center" href="index.html#programs" onclick="toggleMenu()">
+        <div id="mobile-menu"
+            class="hidden absolute top-20 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xl flex flex-col p-6 space-y-4 md:hidden animate-in slide-in-from-top duration-300">
+            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
+                href="index.html#programs" onclick="toggleMenu()">
                 프로그램 소개 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
             </a>
-            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center" href="바우처지원.html#vouchers" onclick="toggleMenu()">
+            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
+                href="바우처지원.html#vouchers" onclick="toggleMenu()">
                 바우처 안내 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
             </a>
-            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center" href="기관소개.html" onclick="toggleMenu()">
+            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
+                href="기관소개.html" onclick="toggleMenu()">
                 교육원소개 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
             </a>
-            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center" href="기관소개.html#news" onclick="toggleMenu()">
+            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
+                href="기관소개.html#news" onclick="toggleMenu()">
                 교육원 소식 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
             </a>
-            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center" href="index.html#contact" onclick="toggleMenu()">
+            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
+                href="index.html#contact" onclick="toggleMenu()">
                 오시는 길 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
             </a>
             <div class="pt-4">
                 <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
-                    class="block w-full bg-[#03C75A] text-white px-6 py-4 rounded-xl font-bold text-center shadow-lg active:scale-95 transition-all">네이버 톡톡 상담하기</a>
+                    class="block w-full bg-[#03C75A] text-white px-6 py-4 rounded-xl font-bold text-center shadow-lg active:scale-95 transition-all">네이버
+                    톡톡 상담하기</a>
             </div>
         </div>
     </header>
@@ -180,10 +182,10 @@
                         <span class="material-symbols-outlined text-sm">neurology</span>
                         첨단 뇌과학 기반 발달 지원
                     </div>
-                    <h1 class="font-hero-display text-hero-display text-primary">
-                        ADHD/자폐/발달재활<br />전문 맞춤 솔루션
+                    <h1 class="font-hero-display text-2xl sm:text-3xl md:text-5xl text-primary mb-6 leading-tight break-keep">
+                        ADHD/자폐/발달재활<br class="hidden md:block" />전문 맞춤 솔루션
                     </h1>
-                    <p class="font-body-lg text-on-surface-variant max-w-lg">
+                    <p class="text-sm md:text-lg text-on-surface-variant max-w-lg leading-relaxed break-keep">
                         소리뇌파 기술과 정밀한 사회인지 훈련을 통해 우리 아이의 균형 잡힌 성장을 돕습니다. 비침습적이고 안전한 기술력으로 고도의 집중력을 디자인합니다.
                     </p>
                     <div class="flex gap-4">
@@ -199,9 +201,9 @@
         </section>
         <!-- Technical Core Section (Bento Grid) -->
         <section class="py-section-padding max-w-[1200px] mx-auto px-8">
-            <div class="mb-stack-lg text-center">
-                <h2 class="font-headline-lg text-headline-lg text-primary mb-4">핵심 지원 기술</h2>
-                <p class="text-on-surface-variant">과학적으로 입증된 데이터 기반의 혁신 기술로 아이의 변화를 이끌어냅니다.</p>
+            <div class="mb-stack-lg text-center px-4">
+                <h2 class="font-headline-lg text-2xl md:text-4xl text-primary mb-4 break-keep">핵심 지원 기술</h2>
+                <p class="text-sm md:text-lg text-on-surface-variant break-keep">과학적으로 입증된 데이터 기반의 혁신 기술로 아이의 변화를 이끌어냅니다.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
                 <!-- Core 1: Sound Brainwave -->
@@ -209,8 +211,8 @@
                     class="md:col-span-2 glass-card p-10 rounded-xl relative overflow-hidden flex flex-col justify-between min-h-[400px]">
                     <div class="relative z-10">
                         <span class="material-symbols-outlined text-primary text-4xl mb-4">headset</span>
-                        <h3 class="font-headline-lg text-2xl text-primary mb-4">소리뇌파 기술 (ASMR-BT)</h3>
-                        <p class="text-on-surface-variant font-body-lg max-w-md">
+                        <h3 class="font-headline-lg text-xl md:text-2xl text-primary mb-4">소리뇌파 기술 (ASMR-BT)</h3>
+                        <p class="text-sm md:text-lg text-on-surface-variant max-w-md break-keep">
                             특수 변조된 소리 파동을 통해 뇌파를 최적의 학습 상태인 알파(Alpha)파로 유도합니다. 비침습적 뇌파 동기화 방식으로 아동의 정서적 안정과 집중력을 동시에
                             확보합니다.
                         </p>
@@ -226,8 +228,8 @@
                     class="bg-secondary-container text-on-secondary-container p-10 rounded-xl flex flex-col justify-between">
                     <div>
                         <span class="material-symbols-outlined text-4xl mb-4">track_changes</span>
-                        <h3 class="font-headline-lg text-2xl mb-4">3단계 충동 억제</h3>
-                        <p class="font-label-md opacity-90">
+                        <h3 class="font-headline-lg text-xl md:text-2xl mb-4">3단계 충동 억제</h3>
+                        <p class="text-sm md:text-base opacity-90 break-keep">
                             지각적 억제, 반응 억제, 그리고 인지적 제어 단계를 통해 아이의 충동적 행동을 체계적으로 조절하는 행동 제어 솔루션을 제공합니다.
                         </p>
                     </div>
@@ -248,8 +250,8 @@
                     class="bg-primary text-white p-10 rounded-xl md:col-span-1 min-h-[300px] flex flex-col justify-between">
                     <div>
                         <span class="material-symbols-outlined text-4xl mb-4">group</span>
-                        <h3 class="font-headline-lg text-2xl mb-4">사회인지 훈련</h3>
-                        <p class="opacity-80 font-label-md">
+                        <h3 class="font-headline-lg text-xl md:text-2xl mb-4">사회인지 훈련</h3>
+                        <p class="opacity-80 text-sm md:text-base break-keep">
                             상대방의 의도 파악과 감정 공감을 위한 시뮬레이션 프로그램을 통해 실질적인 사회성 향상을 도모합니다.
                         </p>
                     </div>
@@ -262,8 +264,8 @@
                 <!-- Feature 4: Non-invasive -->
                 <div class="md:col-span-2 glass-card p-10 rounded-xl flex items-center gap-8">
                     <div class="flex-1">
-                        <h3 class="font-headline-lg text-2xl text-primary mb-4">비침습적 뇌파 동기화</h3>
-                        <p class="text-on-surface-variant">약물이나 물리적 자극 없이, 자연스러운 감각 자극을 통해 뇌의 활성도를 높이는 안전한 미래형 치료 방식입니다.
+                        <h3 class="font-headline-lg text-xl md:text-2xl text-primary mb-4">비침습적 뇌파 동기화</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant break-keep">약물이나 물리적 자극 없이, 자연스러운 감각 자극을 통해 뇌의 활성도를 높이는 안전한 미래형 치료 방식입니다.
                         </p>
                     </div>
                     <div class="w-32 h-32 bg-primary-fixed rounded-full flex items-center justify-center">
@@ -277,8 +279,8 @@
             <div class="max-w-[1200px] mx-auto px-8">
                 <div class="flex flex-col lg:flex-row gap-16 items-stretch">
                     <div class="flex-1 space-y-8">
-                        <h2 class="font-headline-lg text-headline-lg text-primary">경제적 부담을 덜어주는<br />바우처 매칭 서비스</h2>
-                        <p class="text-on-surface-variant font-body-lg">
+                        <h2 class="font-headline-lg text-2xl md:text-4xl text-primary break-keep">경제적 부담을 덜어주는<br class="hidden md:block" />바우처 매칭 서비스</h2>
+                        <p class="text-sm md:text-lg text-on-surface-variant break-keep">
                             동그라미교육원은 정부 지원 바우처 공식 제공 기관입니다. 해당 프로그램을 이용하실 때 받으실 수 있는 혜택을 확인하세요.
                         </p>
                         <div class="grid grid-cols-1 gap-4">
@@ -331,8 +333,8 @@
                 class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-container opacity-5 rounded-full -translate-x-1/2 translate-y-1/2">
             </div>
             <div class="relative z-10 max-w-2xl mx-auto px-8 space-y-8">
-                <h2 class="font-headline-lg text-4xl text-white leading-tight">아이들의 더 밝은 내일을 위해 <br />지금 시작하세요</h2>
-                <p class="text-primary-container font-body-lg">전문가와의 1:1 상담을 통해 아이의 상태를 정확히 파악하는 것이 변화의 시작입니다.</p>
+                <h2 class="font-headline-lg text-2xl md:text-4xl text-white leading-tight break-keep">아이들의 더 밝은 내일을 위해 <br class="hidden md:block" />지금 시작하세요</h2>
+                <p class="text-primary-container text-sm md:text-lg break-keep">전문가와의 1:1 상담을 통해 아이의 상태를 정확히 파악하는 것이 변화의 시작입니다.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185?placePath=/home"
                         target="_blank"
