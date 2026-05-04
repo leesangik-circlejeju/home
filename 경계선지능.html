@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>동그라미교육원 - 경계선 지능 개선 프로그램</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#a6c8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e2e2e7",
+                        "secondary-fixed-dim": "#9ed75b",
+                        "on-primary-container": "#93bcfc",
+                        "secondary-container": "#b9f474",
+                        "on-background": "#1a1c20",
+                        "tertiary": "#4f2b00",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#2e4f00",
+                        "primary": "#003466",
+                        "surface-bright": "#f9f9fe",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#6f3f00",
+                        "surface-variant": "#E2E2E7",
+                        "outline-variant": "#c3c6d1",
+                        "primary-fixed": "#d5e3ff",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#335f99",
+                        "primary-container": "#D5E3FF",
+                        "tertiary-fixed": "#ffdcbe",
+                        "inverse-on-surface": "#f0f0f6",
+                        "outline": "#737781",
+                        "surface-container-high": "#e8e8ed",
+                        "on-tertiary-container": "#ffa746",
+                        "on-surface-variant": "#424750",
+                        "tertiary-fixed-dim": "#ffb870",
+                        "surface": "#FFFFFF",
+                        "surface-container": "#ededf3",
+                        "on-primary-fixed": "#001c3b",
+                        "primary-fixed-dim": "#a6c8ff",
+                        "overlay-glass": "rgba(255, 255, 255, 0.8)",
+                        "secondary": "#3e6a00",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#693c00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#2c1600",
+                        "on-secondary-container": "#437000",
+                        "secondary-fixed": "#b9f474",
+                        "surface-dim": "#d9d9df",
+                        "overlay-modal": "rgba(0, 0, 0, 0.6)",
+                        "on-primary-fixed-variant": "#144780",
+                        "on-secondary-fixed": "#0f2000",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f3f3f9",
+                        "background": "#F8F9FA",
+                        "inverse-surface": "#2e3035",
+                        "on-surface": "#1a1c20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "3rem",
+                        "gutter": "1.5rem",
+                        "container-max": "1200px",
+                        "stack-md": "1.5rem",
+                        "section-padding": "100px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Pretendard", "Inter"],
+                        "hero-display": ["Outfit", "Noto Sans KR"],
+                        "body-lg": ["Pretendard", "Inter"],
+                        "headline-lg": ["Outfit", "Noto Sans KR"]
+                    },
+                    "fontSize": {
+                        "label-md": ["0.9rem", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "hero-display": ["3.5rem", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["1.125rem", { "lineHeight": "1.8", "fontWeight": "400" }],
+                        "headline-lg": ["2.25rem", { "lineHeight": "1.3", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .overlay-glass {
+            backdrop-filter: blur(15px);
+        }
+
+        .stack-lg {
+            margin-bottom: 3rem;
+        }
+
+        .stack-md {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-padding {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background antialiased">
+    <!-- TopAppBar -->
+    <nav
+        class="fixed top-0 left-0 w-full z-[100] bg-white/70 backdrop-blur-[15px] border-b border-slate-200/50 shadow-sm transition-all duration-300 ease-in-out">
+        <div class="max-w-[1200px] mx-auto flex justify-between items-center px-8 h-20">
+            <a href="index.html"
+                class="text-xl font-bold text-blue-900 font-headline-lg tracking-tight decoration-none">동그라미교육원</a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="index.html#programs">프로그램 소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
+                    href="바우처지원.html#vouchers">바우처 안내</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
+                    href="기관소개.html#news">교육원소식</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는
+                    길</a>
+            </div>
+            <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
+                class="bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md">상담
+                문의</a>
+        </div>
+    </nav>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="section-padding bg-white relative overflow-hidden">
+            <div class="max-w-[1200px] mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+                <div class="z-10">
+                    <span
+                        class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-fixed-variant font-label-md text-label-md mb-6">느린
+                        학습자를 위한 인지 활성화</span>
+                    <h1 class="font-hero-display text-hero-display text-primary stack-md">경계선 지능<br />혁신 개선 프로그램</h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant stack-lg">
+                        뇌가소성 원리를 기반으로 한 CBT 시스템과 독자적인 반응 훈련을 통해<br />
+                        느린 학습자의 인지 능력을 근본적으로 활성화합니다.
+                    </p>
+                    <div class="flex gap-4">
+                        <button
+                            class="bg-primary text-white px-8 py-4 rounded-full font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-all">훈련
+                            시작하기</button>
+                        <button
+                            class="border border-outline text-on-surface px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container transition-all">상세
+                            기술 보기</button>
+                    </div>
+                </div>
+                <div class="relative h-[500px] rounded-xl overflow-hidden shadow-xl">
+                    <img class="w-full h-full object-cover"
+                        data-alt="A warm and inviting modern cognitive training room where a specialist interacts kindly with a child using a high-tech tablet interface. The room is filled with soft natural light and features clean white furniture and light wood accents, embodying a high-tech warmth aesthetic. The atmosphere is nurturing and professional, with high-key lighting that emphasizes a clean and optimistic clinical environment."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiCge41_JhCyr5COW0NxYZPtPnRq2wsGTy4oSeXY8YTPMp8e-EXeFMkwAMkUobc4vNoGRuqx6G0N97acEu1axuzp_XV4L2D-Vkz00_Tg9VPGpXstr8rO9pS8zEntNK8sNeePaM-48ipuZb29b8TyMEDity4Fgd55f76ndQZ_PmDpwfi7MhOobzI6K7dub878MR8tdTr9SQfNOtyIqsN_z06eGrcIMQn1xS6mFwyO8Fim6OYbd8Hq0jT3zAqFKoFALgdMDaaE1QHRM" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Core Technologies Bento Grid -->
+        <section class="section-padding bg-surface-container-low">
+            <div class="max-w-[1200px] mx-auto px-8">
+                <div class="text-center stack-lg">
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-4">핵심 기술 시스템</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant">정밀한 기술력이 따뜻한 변화를 만듭니다.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- CBT Card -->
+                    <div
+                        class="bg-white p-8 rounded-lg shadow-sm border border-outline-variant hover:shadow-md transition-all flex flex-col">
+                        <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary" data-icon="computer">computer</span>
+                        </div>
+                        <h3 class="font-headline-lg text-xl mb-4">CBT 시스템</h3>
+                        <p class="font-body-lg text-on-surface-variant flex-grow">컴퓨터 기반 인지 재활 시스템을 통해 개개인의 수준에 맞춘 맞춤형
+                            학습 경로를 자동 설계합니다.</p>
+                    </div>
+                    <!-- 0.3s Training Card -->
+                    <div
+                        class="bg-primary text-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col">
+                        <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-white" data-icon="speed">speed</span>
+                        </div>
+                        <h3 class="font-headline-lg text-xl mb-4">0.3초 반응 훈련</h3>
+                        <p class="font-body-lg text-primary-container flex-grow">뇌의 정보 처리 속도를 극대화하는 임계점 훈련으로, 인지 유연성과 판단
+                            속도를 비약적으로 향상시킵니다.</p>
+                    </div>
+                    <!-- Dominant Acceleration Card -->
+                    <div
+                        class="bg-white p-8 rounded-lg shadow-sm border border-outline-variant hover:shadow-md transition-all flex flex-col">
+                        <div
+                            class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-secondary"
+                                data-icon="psychology">psychology</span>
+                        </div>
+                        <h3 class="font-headline-lg text-xl mb-4">도미넌트 가속화</h3>
+                        <p class="font-body-lg text-on-surface-variant flex-grow">우세 인지 영역을 먼저 강화하여 하위 인지 영역까지 동반 상승시키는
+                            뇌가소성 활성화 원리를 적용합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features & Voucher Section (Asymmetric Layout) -->
+        <section class="section-padding bg-white">
+            <div class="max-w-[1200px] mx-auto px-8 grid md:grid-cols-5 gap-12 items-start">
+                <div class="md:col-span-3 space-y-12">
+                    <div>
+                        <h2 class="font-headline-lg text-headline-lg text-primary mb-8">과학적 접근을 통한 근본적 변화</h2>
+                        <div class="space-y-6">
+                            <div
+                                class="flex gap-6 p-6 rounded-lg bg-surface-bright border-l-4 border-secondary shadow-sm">
+                                <span class="material-symbols-outlined text-secondary text-3xl shrink-0"
+                                    data-icon="neurology">neurology</span>
+                                <div>
+                                    <h4 class="font-label-md text-lg text-on-surface mb-2">뇌가소성 원리 이용</h4>
+                                    <p class="font-body-lg text-on-surface-variant">반복적인 특정 자극을 통해 뇌의 신경망을 재구성하고 연결을
+                                        강화하여 학습 효율을 높입니다.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex gap-6 p-6 rounded-lg bg-surface-bright border-l-4 border-primary shadow-sm">
+                                <span class="material-symbols-outlined text-primary text-3xl shrink-0"
+                                    data-icon="lightbulb">lightbulb</span>
+                                <div>
+                                    <h4 class="font-label-md text-lg text-on-surface mb-2">인지 기능 활성화</h4>
+                                    <p class="font-body-lg text-on-surface-variant">느린 학습자의 기저 인지(주의력, 기억력, 작업속도)를 활성화하여
+                                        전반적인 학습 능력을 개선합니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden h-80 relative">
+                        <img class="w-full h-full object-cover"
+                            data-alt="A detailed close-up shot of a modern workspace with digital tablets showing colorful cognitive training puzzles. The scene is bathed in warm sunlight, creating a gentle and productive atmosphere. Soft shadows and a clean, organized desk environment convey a sense of professionalism and caring education for children, following the brand's high-tech warmth aesthetic."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaSeeK5PWoaf-0Lw0q38g5Lt1iefeTPMGNo2KaPUpNskJjF44r6nRNGu-Ss20_hEEjqLECJieUqjjba49UIY99Zuq4KAkwFhNgMJKXgVDu2OlCbO6tNqzGs-EbLESEiyxN8RNkFZHSpf5jVGmbs2eCJmOhYcXlOLYfC8m3Vt3kI90QRfjPh9rksJggr91HnDwmRlDXs1ANG9p5rea8ksEIb9DAmzWM1z3x6tCTIJXGxGa0GmZqejSdwEqvgKZrtZeYnakwEw8r6Tc" />
+                    </div>
+                </div>
+                <!-- Voucher Side Panel -->
+                <div
+                    class="md:col-span-2 sticky top-28 bg-surface-container-high p-8 rounded-lg space-y-8 shadow-inner">
+                    <h3 class="font-headline-lg text-2xl text-primary">지원 가능한 바우처</h3>
+                    <p class="font-body-lg text-on-surface-variant">경제적 부담을 덜어드리는 교육 지원 혜택을 확인하세요.</p>
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-lg border border-primary-container">
+                            <div class="flex justify-between items-start mb-4">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">교육청
+                                    지원</span>
+                                <span class="material-symbols-outlined text-secondary"
+                                    data-icon="verified">verified</span>
+                            </div>
+                            <h4 class="font-label-md text-lg text-primary mb-1">경계선지능 지원 바우처</h4>
+                            <p class="font-body-lg text-on-surface-variant mb-4">교육청 주관 느린 학습자 특별 지원</p>
+                            <div class="text-right text-primary font-bold text-xl">연 150만 원 지원</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border border-primary-container">
+                            <div class="flex justify-between items-start mb-4">
+                                <span
+                                    class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-xs font-bold">지역사회</span>
+                                <span class="material-symbols-outlined text-on-tertiary-container"
+                                    data-icon="credit_card">credit_card</span>
+                            </div>
+                            <h4 class="font-label-md text-lg text-primary mb-1">희망나눔카드</h4>
+                            <p class="font-body-lg text-on-surface-variant">복지 사각지대 및 정서 지원 혜택</p>
+                        </div>
+                    </div>
+                    <a href="바우처지원.html"
+                        class="w-full bg-primary text-white py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-white" data-icon="help">help</span>
+                        바우처 자격 확인하기
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Call to Action -->
+        <!-- Bottom CTA -->
+        <section class="bg-primary mt-24 py-20 text-center relative overflow-hidden">
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-accent-orange opacity-10 rounded-full translate-x-1/2 -translate-y-1/2">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-container opacity-5 rounded-full -translate-x-1/2 translate-y-1/2">
+            </div>
+            <div class="relative z-10 max-w-2xl mx-auto px-8 space-y-8">
+                <h2 class="font-headline-lg text-4xl text-white leading-tight">아이들의 더 밝은 내일을 위해 <br />지금 시작하세요</h2>
+                <p class="text-primary-container font-body-lg">전문가와의 1:1 상담을 통해 아이의 상태를 정확히 파악하는 것이 변화의 시작입니다.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185?placePath=/home"
+                        target="_blank"
+                        class="bg-accent-orange text-white px-10 py-5 rounded-full font-headline-lg text-lg shadow-xl hover:scale-105 transition-transform inline-block">
+                        지금 바로 예약하기
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full py-16 border-t border-slate-200 bg-slate-50">
+        <div class="max-w-[1200px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <div class="font-bold text-lg text-slate-800">동그라미교육원</div>
+                <p class="text-sm leading-relaxed text-slate-500 max-w-md">
+                    전문적인 기술 기반 인지 재활을 통해 느린 학습자들이 사회의 당당한 일원으로 성장할 수 있도록 돕는 따뜻한 혁신을 추구합니다.
+                </p>
+                <div class="text-sm text-slate-500">
+                    © 2024 동그라미교육원. All rights reserved.
+                </div>
+            </div>
+            <div class="flex flex-col md:items-end gap-6">
+                <nav class="flex flex-wrap gap-8">
+                    <a class="text-sm text-slate-500 hover:underline transition-all" href="#">개인정보처리방침</a>
+                    <a class="text-sm text-slate-500 hover:underline transition-all" href="#">이용약관</a>
+                    <a class="text-sm text-slate-500 hover:underline transition-all" href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185" target="_blank">찾아오시는 길</a>
+                    <a class="text-sm text-slate-500 hover:underline transition-all" href="#">문의하기</a>
+                </nav>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined text-xl" data-icon="share">share</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined text-xl" data-icon="mail">mail</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

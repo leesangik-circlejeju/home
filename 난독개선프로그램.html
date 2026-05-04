@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>난독 개선 프로그램 - 동그라미교육원</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdcbe",
+                        "primary-container": "#D5E3FF",
+                        "surface-tint": "#335f99",
+                        "surface-container-high": "#e8e8ed",
+                        "primary": "#003466",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#B9F474",
+                        "on-tertiary-container": "#291800",
+                        "surface-container-highest": "#e2e2e7",
+                        "on-surface-variant": "#424750",
+                        "on-secondary-fixed-variant": "#2e4f00",
+                        "secondary": "#3e6a00",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#d9d9df",
+                        "inverse-primary": "#a6c8ff",
+                        "inverse-surface": "#2e3035",
+                        "on-secondary-fixed": "#0f2000",
+                        "surface": "#FFFFFF",
+                        "on-primary-container": "#93bcfc",
+                        "outline-variant": "#c3c6d1",
+                        "on-primary-fixed": "#001c3b",
+                        "surface-variant": "#e2e2e7",
+                        "on-tertiary-fixed": "#2c1600",
+                        "tertiary-container": "#6f3f00",
+                        "tertiary": "#4f2b00",
+                        "overlay-glass": "rgba(255, 255, 255, 0.8)",
+                        "inverse-on-surface": "#f0f0f6",
+                        "on-tertiary-fixed-variant": "#693c00",
+                        "on-secondary-container": "#437000",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#9ed75b",
+                        "on-surface": "#1a1c20",
+                        "tertiary-fixed-dim": "#ffb870",
+                        "primary-fixed-dim": "#a6c8ff",
+                        "overlay-modal": "rgba(0, 0, 0, 0.6)",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#b9f474",
+                        "surface-container-low": "#f3f3f9",
+                        "outline": "#737781",
+                        "background": "#F8F9FA",
+                        "on-background": "#1a1c20",
+                        "primary-fixed": "#d5e3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#ededf3",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#144780",
+                        "surface-bright": "#f9f9fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "stack-md": "1.5rem",
+                        "stack-lg": "3rem",
+                        "section-padding": "100px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Outfit", "Noto Sans KR"],
+                        "hero-display": ["Outfit", "Noto Sans KR"],
+                        "body-lg": ["Pretendard", "Inter"],
+                        "label-md": ["Pretendard", "Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["2.25rem", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "hero-display": ["3.5rem", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["1.125rem", { "lineHeight": "1.8", "fontWeight": "400" }],
+                        "label-md": ["0.9rem", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #F8F9FA;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        .text-accent-orange {
+            color: #FF9800;
+        }
+
+        .bg-accent-orange {
+            background-color: #FF9800;
+        }
+    </style>
+</head>
+
+<body class="text-on-background">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 left-0 w-full z-[100] bg-white/70 backdrop-blur-[15px] border-b border-slate-200/50 h-20">
+        <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-8 h-full">
+            <div class="text-xl font-bold text-primary font-headline-lg tracking-tight">동그라미교육원</div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="index.html#programs">프로그램 소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
+                    href="바우처지원.html#vouchers">바우처 안내</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원
+                    소식</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는
+                    길</a>
+            </div>
+            <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
+                class="bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md">상담
+                문의</a>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative h-[600px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover"
+                    data-alt="A bright and warm cognitive training room for children filled with natural sunlight. The space features ergonomic wooden furniture, colorful but organized educational tools, and high-tech tablets on white desks. Soft orange and professional blue accents are integrated into the interior design, creating a nurturing and technologically advanced atmosphere for learning and rehabilitation."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwMDwhwOYyebeqbj92KRmUYy54hmyURD6qHxMFTARHA7EfsxXhL8WVAKrEGQVLlHT9M5lPQ4Flmq6YFAtD1Fi-4LZNs_4RiqFye5ZmClC3bUVXfPDvrIIY1VIqqOSDGR1NBILRtUDtH5UzA-kkjaQctGKILWIvJ2W5rZOOSbGRO6SrGhYTbbSg6Squ4qrGig65KWbwY3wk0GlTiCWE73X_fCNPnYt5UZVxSOK43i8a3pXnikTQ8KVXqhNgJB3k23MyQaboURDNCKc" />
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-[1200px] mx-auto px-8 w-full text-white">
+                <div class="max-w-2xl space-y-stack-md">
+                    <span
+                        class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md">전문
+                        인지 재활 솔루션</span>
+                    <h1 class="font-hero-display text-hero-display tracking-tight">아이들의 읽기 자신감을 <br> 키우는 과학적 솔루션,
+                        <br /><span class="text-accent-orange">난독 개선 프로그램</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-slate-100 opacity-90">난독증의 주요원인을 시지각능력, 언어기능, 뇌기능이라는 세가지 핵심
+                        영역에서의 통합적인 개선을 목표로 합니다</p>
+
+                </div>
+            </div>
+        </section>
+        <!-- Technology Deep-Dive -->
+        <section class="bg-surface-container py-section-padding">
+            <div class="max-w-[1200px] mx-auto px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                    <div class="space-y-2">
+                        <h2 class="font-headline-lg text-headline-lg text-primary">핵심 기술 솔루션</h2>
+                        <p class="text-slate-500">동그라미교육원만의 독자적인 통합 재활 시스템을 경험해보세요.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="text-center space-y-6">
+                        <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm">
+                            <span class="material-symbols-outlined text-5xl text-primary"
+                                data-icon="visibility">visibility</span>
+                        </div>
+                        <h3 class="font-headline-lg text-2xl text-primary">인지 훈련</h3>
+                        <p class="text-slate-600 leading-relaxed">읽기 주의력, 기억력등을 강화하고, 시각적 자극에 대한 반응 속도를 높이는 디지털 훈련
+                            시스템입니다.
+                        </p>
+                    </div>
+                    <div class="text-center space-y-6">
+                        <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm">
+                            <span class="material-symbols-outlined text-5xl text-accent-orange"
+                                data-icon="record_voice_over">record_voice_over</span>
+                        </div>
+                        <h3 class="font-headline-lg text-2xl text-primary">언어 훈련</h3>
+                        <p class="text-slate-600 leading-relaxed">언어의 소리 체계를 구분하고 단어의 의미 구조를 빠르게 연결하는 언어 회로 강화 훈련을
+                            진행합니다.</p>
+                    </div>
+                    <div class="text-center space-y-6">
+                        <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm">
+                            <span class="material-symbols-outlined text-5xl text-secondary" data-icon="hub">hub</span>
+                        </div>
+                        <h3 class="font-headline-lg text-2xl text-primary">뇌기능 통합</h3>
+                        <p class="text-slate-600 leading-relaxed">좌우 뇌의 균형 잡힌 정보 전달을 촉진하여 학습 정보를 효율적으로 통합하고 저장하는 능력을
+                            키웁니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Program Detail Section (Bento Grid) -->
+        <section class="section-padding pt-24 max-w-[1200px] mx-auto px-8">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="font-headline-lg text-headline-lg text-primary">프로그램 상세 안내</h2>
+                <div class="w-16 h-1 bg-accent-orange mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <!-- Card 1: Description -->
+                <div
+                    class="md:col-span-2 glass-card border border-outline/10 p-10 rounded-lg flex flex-col justify-between shadow-sm">
+                    <div class="space-y-stack-md">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+                        </div>
+                        <h3 class="font-headline-lg text-2xl text-primary">첨단 기술 기반 훈련 프로세스</h3>
+                        <p class="font-body-lg text-slate-600">
+                            단순한 반복 읽기가 아닙니다. <strong class="text-primary">인지검사 (브레인메모리검사), 시지각검사 (K-mvpt),
+                                언어능력평가(Kolra)</strong>을 통해 읽기 오류를 정밀 분석하고, <strong class="text-primary">시지각 훈련
+                                SW</strong>와 <strong class="text-primary">청각처리 개선
+                                솔루션</strong>을 결합하여 뇌의 읽기 경로를 과학적으로 재구성합니다.
+                        </p>
+                    </div>
+                    <div class="mt-8 flex gap-4 overflow-x-auto pb-2">
+                        <span class="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium whitespace-nowrap">#브레인메모리
+                            인지기능검사</span>
+                        <span class="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium whitespace-nowrap">#K-mvpt
+                            형태시지각검사</span>
+                        <span class="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium whitespace-nowrap">#Kolra
+                            언어능력평가</span>
+                    </div>
+                </div>
+                <!-- Card 2: Target -->
+                <div class="bg-primary p-10 rounded-lg text-on-primary flex flex-col justify-between shadow-lg">
+                    <div class="space-y-stack-md">
+                        <h3 class="font-headline-lg text-2xl">교육 대상</h3>
+                        <ul class="space-y-4 font-body-lg opacity-90">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-secondary-container"
+                                    data-icon="check_circle" data-weight="fill">check_circle</span>
+                                미취학 아동 및 초·중·고교생
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-secondary-container"
+                                    data-icon="check_circle" data-weight="fill">check_circle</span>
+                                글자를 읽는 속도가 매우 느린 경우
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-secondary-container"
+                                    data-icon="check_circle" data-weight="fill">check_circle</span>
+                                읽은 내용에 대한 이해도가 낮은 아이
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-sm opacity-70">※ 정확한 진단을 위해 난독 검사가 실시될 수 있습니다</p>
+                    </div>
+                </div>
+                <!-- Card 3: Outcome -->
+                <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                    <div
+                        class="bg-white border border-outline/10 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <h4 class="font-headline-lg text-xl text-primary mb-4">시지각 향상훈련</h4>
+                        <p class="font-body-lg text-slate-600 text-sm">읽기 개선 중심의 시지각 안구 주의집중력, 기억력 훈련 이외에 좌우구별 훈련, 형태의
+                            향상성 훈련, 공간에서 위치 훈련, 시각 종결성 훈련, 전경 배경 훈련, 깊이 지각 훈련, 공간 관계 훈련, 지리적 지남력 훈련을 하기 위한 첨단인지 프로그램 활용
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white border border-outline/10 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <h4 class="font-headline-lg text-xl text-primary mb-4">인지기능 향상훈련</h4>
+                        <p class="font-body-lg text-slate-600 text-sm">집중력 향상 훈련, 초점주의력 향상, 전환주의력 향상, 선택주의력 향상, 분할주의력
+                            향상, 지속주의력 향상, 감각기억, 단기기억, 장기기억 향상</p>
+                    </div>
+                    <div
+                        class="bg-white border border-outline/10 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <h4 class="font-headline-lg text-xl text-primary mb-4">언어기능 향상훈련</h4>
+                        <p class="font-body-lg text-slate-600 text-sm">아동의 수용언어, 표현언어 능력향상 및 연장발성호흡, 청능훈련을 통한 기초 언어감각지각
+                            훈련</p>
+                    </div>
+                    <div
+                        class="bg-white border border-outline/10 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <h4 class="font-headline-lg text-xl text-primary mb-4">난독 특화 훈련</h4>
+                        <p class="font-body-lg text-slate-600 text-sm">언어처리영역 집중화 훈련, 청각처리기능향상, 소뇌의 기능개선훈련, 안구단속훈련 등 실시
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white border border-outline/10 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <h4 class="font-headline-lg text-xl text-primary mb-4">난독 검사</h4>
+                        <p class="font-body-lg text-slate-600 text-sm">언어, 시지각, 인지 3단계 종합 평가로 구성이 되며, Kolra 언어읽기 검사,
+                            K-MVPT 형태시지각검사, 브레인메모리 인지검사로 구성됨</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contextual Voucher Section -->
+        <section class="section-padding pt-24 max-w-[1200px] mx-auto px-8">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="font-headline-lg text-headline-lg text-primary">바우처 지원 안내</h2>
+                <div class="w-16 h-1 bg-accent-orange mx-auto rounded-full"></div>
+            </div>
+
+            <div
+                class="bg-white border-2 border-primary/5 rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+                <div class="md:w-1/3 bg-primary p-12 text-on-primary flex flex-col justify-center">
+                    <h2 class="font-headline-lg text-3xl mb-6 leading-tight">바우처 <br />맞춤 안내</h2>
+                    <p class="opacity-80 font-body-lg">난독 개선 프로그램은 교육청 및 정부 지원 사업과 연계하여 비용 부담을 낮출 수 있습니다.</p>
+                    <div class="mt-8 p-4 bg-white/10 rounded-lg border border-white/20">
+                        <p class="text-sm font-medium">우리 아이에게 맞는 지원 혜택이 있는지 지금 바로 확인해보세요.</p>
+                    </div>
+                </div>
+                <div class="md:w-2/3 p-12 space-y-8">
+                    <div class="space-y-6">
+                        <!-- Voucher Item 1 -->
+                        <div
+                            class="flex items-center gap-6 p-6 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors border border-slate-100">
+                            <div
+                                class="w-16 h-16 bg-secondary-container rounded-full flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-on-secondary-container"
+                                    data-icon="school">school</span>
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-start mb-1">
+                                    <h4 class="font-headline-lg text-xl text-primary">교육청 난독난산 서비스</h4>
+                                    <span
+                                        class="px-3 py-1 bg-primary-container text-primary text-xs font-bold rounded">추천</span>
+                                </div>
+                                <p class="text-slate-600 text-sm">교육청과 연계하여 읽기 곤란 아동을 대상으로 전문 진단 및 치료비를 지원합니다.</p>
+                            </div>
+                        </div>
+                        <!-- Voucher Item 2 -->
+                        <div
+                            class="flex items-center gap-6 p-6 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors border border-slate-100">
+                            <div
+                                class="w-16 h-16 bg-tertiary-fixed rounded-full flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-on-tertiary-container"
+                                    data-icon="volunteer_activism">volunteer_activism</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-headline-lg text-xl text-primary">희망나눔카드</h4>
+                                <p class="text-slate-600 text-sm">지역 사회 투자 서비스의 일환으로 장애 아동 및 특수 교육 대상자에게 제공되는 바우처입니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="바우처지원.html"
+                        class="w-full py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all block text-center">
+                        바우처 지원 확인하기
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Bottom CTA -->
+        <section class="bg-primary mt-24 py-20 text-center relative overflow-hidden">
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-accent-orange opacity-10 rounded-full translate-x-1/2 -translate-y-1/2">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-container opacity-5 rounded-full -translate-x-1/2 translate-y-1/2">
+            </div>
+            <div class="relative z-10 max-w-2xl mx-auto px-8 space-y-8">
+                <h2 class="font-headline-lg text-4xl text-white leading-tight">아이들의 더 밝은 내일을 위해 <br />지금 시작하세요</h2>
+                <p class="text-primary-container font-body-lg">전문가와의 1:1 상담을 통해 아이의 상태를 정확히 파악하는 것이 변화의 시작입니다.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185?placePath=/home"
+                        target="_blank"
+                        class="bg-accent-orange text-white px-10 py-5 rounded-full font-headline-lg text-lg shadow-xl hover:scale-105 transition-transform inline-block">
+                        지금 바로 예약하기
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full py-16 border-t border-slate-200 bg-slate-50">
+        <div class="max-w-[1200px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <div class="font-bold text-lg text-slate-800">동그라미교육원</div>
+                <p class="text-sm leading-relaxed text-slate-500 max-w-sm">
+                    우리는 기술과 따뜻한 마음을 결합하여 모든 아이들이 차별 없이 배우고 성장할 수 있는 세상을 꿈꿉니다. 인지 및 언어 재활의 새로운 기준을 제시합니다.
+                </p>
+                <p class="text-sm text-slate-400">© 2024 동그라미교육원. All rights reserved.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h5 class="font-bold text-slate-800">정보</h5>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a class="hover:underline hover:text-blue-600 transition-all" href="#">개인정보처리방침</a></li>
+                        <li><a class="hover:underline hover:text-blue-600 transition-all" href="#">이용약관</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h5 class="font-bold text-slate-800">고객지원</h5>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a class="hover:underline hover:text-blue-600 transition-all"
+                                href="https://map.naver.com/p/search/%EB%8F%99%EA%B7%B8%EB%9D%BC%EB%AF%B8%EA%B5%90%EC%9C%A1%EC%9B%90/place/1935615185"
+                                target="_blank">찾아오시는 길</a></li>
+                        <li><a class="hover:underline hover:text-blue-600 transition-all cursor-pointer"
+                                onclick="openContactModal()">문의하기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Consultation Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[200] hidden items-center justify-center">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="relative w-full max-w-lg p-6">
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <div class="p-8">
+                    <div class="mb-6">
+                        <span class="text-primary font-bold text-sm uppercase tracking-widest">Contact Us</span>
+                        <h2 class="text-3xl font-bold text-primary mt-2">상담 문의</h2>
+                        <p class="text-slate-600 mt-4">우리 아이를 위한 맞춤형 상담, 지금 바로 시작하세요.</p>
+                    </div>
+                    <div class="pt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
+                            class="flex-1 bg-[#03C75A] text-white text-center py-4 rounded-xl font-bold hover:opacity-90 transition-all">네이버
+                            톡톡 상담</a>
+                        <button onclick="closeModal()"
+                            class="flex-1 bg-slate-100 text-slate-600 py-4 rounded-xl font-bold hover:bg-slate-200 transition-all">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+
+
+</html>
