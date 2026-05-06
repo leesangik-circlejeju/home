@@ -617,15 +617,15 @@
 
             programGrid.innerHTML = PROGRAM_DATA.map(item => `
                 <div onclick="expandProgramDetails(${item.id})"
-                    class="bg-white p-4.5 md:p-8 rounded-2xl md:rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-3 md:mb-6">
+                    class="bg-white p-6 md:p-10 rounded-2xl md:rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4 md:mb-8">
                         <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
                             <span class="material-symbols-outlined text-xl md:text-3xl">${item.icon}</span>
                         </div>
                         <span class="text-[9px] md:text-[10px] font-bold text-secondary bg-secondary-container/30 px-2 py-0.5 md:px-3 md:py-1 rounded-full uppercase tracking-wider">${item.tag}</span>
                     </div>
-                    <h3 class="text-base md:text-xl font-bold text-primary mb-2 md:mb-4 group-hover:text-secondary transition-colors break-keep leading-tight">${item.title}</h3>
-                    <p class="text-slate-600 text-[11px] md:text-sm leading-relaxed mb-4 md:mb-6 flex-grow break-keep">${item.description}</p>
+                    <h3 class="text-base md:text-xl font-bold text-primary mb-3 md:mb-5 group-hover:text-secondary transition-colors break-keep leading-tight">${item.title}</h3>
+                    <p class="text-slate-600 text-[11px] md:text-sm leading-relaxed mb-6 md:mb-8 flex-grow break-keep">${item.description}</p>
                     <div class="flex items-center text-primary text-[11px] md:text-sm font-bold opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all md:translate-x-[-10px] md:group-hover:translate-x-0">
                         상세 정보 확인
                         <span class="material-symbols-outlined text-[11px] md:text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -678,25 +678,25 @@
             const filtered = category === 'all' ? vouchersData : vouchersData.filter(v => v.category === category);
 
             grid.innerHTML = filtered.map((v, idx) => `
-                <div class="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-slate-100 hover:shadow-lg transition-all group flex flex-col">
+                <div class="bg-white p-5.5 md:p-7.5 rounded-xl shadow-sm border border-slate-100 hover:shadow-lg transition-all group flex flex-col h-full">
                     <!-- Top Badge Row -->
-                    <div class="flex justify-between items-start mb-2 h-4">
+                    <div class="flex justify-between items-start mb-3 h-4">
                         <span class="text-secondary font-bold text-[9px] md:text-[10px] uppercase tracking-widest">${v.subtitle}</span>
                         ${v.tag ? `<div class="bg-[#B4E197]/20 text-[#3d5a2d] px-1.5 py-0.5 rounded text-[8px] md:text-[9px] font-bold">${v.tag}</div>` : ''}
                     </div>
                     
                     <!-- Title Area -->
-                    <h3 class="text-[14px] md:text-[16px] font-bold text-primary mb-3 group-hover:text-secondary transition-colors break-keep leading-tight min-h-[2.4em] flex items-center">
+                    <h3 class="text-[14px] md:text-[16px] font-bold text-primary mb-4.5 group-hover:text-secondary transition-colors break-keep leading-tight min-h-[2.4em] flex items-center">
                         ${v.title}
                     </h3>
 
                     <!-- Info List Area -->
-                    <div class="space-y-1.5 mb-4 flex-grow">
-                        <div class="flex justify-between items-center border-b border-slate-50 pb-1.5">
+                    <div class="space-y-2 mb-6 flex-grow">
+                        <div class="flex justify-between items-center border-b border-slate-50 pb-2">
                             <span class="text-slate-500 text-[10px] md:text-[11px] flex-shrink-0">지원 금액</span>
                             <span class="text-primary font-bold text-[10px] md:text-[12px] text-right ml-2">${v.price}</span>
                         </div>
-                        <div class="flex justify-between items-start border-b border-slate-50 pb-1.5">
+                        <div class="flex justify-between items-start border-b border-slate-50 pb-2">
                             <span class="text-slate-500 text-[10px] md:text-[11px] mt-0.5 flex-shrink-0">지원 대상</span>
                             <span class="text-slate-700 text-[10px] md:text-[11px] font-medium text-right ml-4 leading-normal">${v.target}</span>
                         </div>
