@@ -28,9 +28,9 @@
                         "overlay-modal": "rgba(0, 0, 0, 0.6)"
                     },
                     spacing: {
-                        "section-padding": "100px",
-                        "stack-md": "1.5rem",
-                        "stack-lg": "3rem"
+                        "section-padding": "clamp(30px, 5vh, 60px)",
+                        "stack-md": "1rem",
+                        "stack-lg": "2rem"
                     },
                     fontFamily: {
                         "hero-display": ["Outfit", "Noto Sans KR"],
@@ -81,8 +81,12 @@
         <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-8 h-full">
             <div class="flex items-center">
                 <!-- Mobile Menu Toggle -->
-                <button id="menu-toggle" class="md:hidden flex items-center pr-2 text-primary" onclick="toggleMenu()">
-                    <span id="menu-icon" class="material-symbols-outlined text-3xl">menu</span>
+                <button id="menu-toggle" class="md:hidden flex items-center pr-2 text-primary relative w-10 h-10"
+                    onclick="toggleMenu()">
+                    <i id="icon-menu"
+                        class="fas fa-bars text-2xl absolute inset-0 flex items-center justify-center transition-all duration-300"></i>
+                    <i id="icon-close"
+                        class="fas fa-times text-2xl absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 rotate-90"></i>
                 </button>
                 <a href="index.html"
                     class="text-xl font-bold text-primary font-headline-lg tracking-tight shrink-0">동그라미교육원</a>
@@ -90,8 +94,7 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
-                    href="index.html#programs">프로그램 소개</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="프로그램.html">프로그램 소개</a>
                 <a class="text-slate-600 hover:text-primary transition-colors font-medium"
                     href="바우처지원.html#vouchers">바우처 안내</a>
                 <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
@@ -112,7 +115,7 @@
         <div id="mobile-menu"
             class="hidden absolute top-20 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xl flex flex-col p-6 space-y-4 md:hidden animate-in slide-in-from-top duration-300">
             <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
-                href="index.html#programs" onclick="toggleMenu()">
+                href="프로그램.html" onclick="toggleMenu()">
                 프로그램 소개 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
             </a>
             <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
@@ -141,78 +144,253 @@
 
     <main class="pt-20">
         <!-- Hero -->
-        <section class="relative min-h-[600px] flex items-center overflow-hidden">
+        <section class="relative min-h-[300px] md:min-h-[600px] flex items-center overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <img class="w-full h-full object-cover" src="hero_main.png"
+                <img class="w-full h-full object-cover object-center md:object-right" src="치료배경.png"
                     alt="Modern Korean Oriental style Hero Image - Dongrami Education Center" />
-                <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+                <!-- 모바일용 오버레이 (상하 그라데이션)와 데스크탑용 오버레이 (좌우 그라데이션) 구분 -->
+                <div
+                    class="absolute inset-0 bg-white/60 md:bg-transparent md:bg-gradient-to-r md:from-white md:via-white/80 md:to-transparent">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent md:hidden"></div>
             </div>
-            <div class="container max-w-[1200px] mx-auto px-8 relative z-10 py-section-padding">
-                <div class="max-w-2xl">
-                    <span
-                        class="inline-block px-4 py-1.5 rounded-full bg-primary-container text-primary font-bold text-[11px] md:text-sm mb-4 whitespace-nowrap">언어,인지,정서,심리
-                        통합 재활 전문 기관</span>
-                    <h1 class="font-hero-display text-2xl sm:text-3xl md:text-5xl text-primary mb-6 leading-tight break-keep">아이의 숨겨진 잠재력,<br class="hidden md:block" />첨단 소프트웨어로 재활 합니다</h1>
-                    <p class="text-sm md:text-lg text-on-surface-variant mb-8 leading-relaxed break-keep">동그라미교육원은 제주 지역 아이들을 위해<br class="hidden md:block" />과학적인 데이터와 따뜻한 마음을 결합한 최적의 솔루션을 제공합니다.</p>
-                    <div class="flex space-x-4">
-                        <button onclick="location.href='기관소개.html'"
-                            class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center gap-2 group min-w-[220px] justify-center">
-                            <span class="group-hover:hidden">동그라미교육원 소개</span>
-                            <span class="hidden group-hover:inline">동그라미교육원 사이트 이동</span>
+            <div class="container max-w-[1200px] mx-auto px-8 relative z-10 py-8 md:py-section-padding">
+                <div class="max-w-2xl text-center md:text-left">
+                    <h1
+                        class="font-hero-display text-2xl sm:text-4xl md:text-5xl text-primary mb-6 leading-tight break-keep">
+                        아이의 잠재력을 깨우는 <br class="hidden md:block" />통합재활센터</h1>
+                    <p class="text-sm md:text-lg text-on-surface-variant mb-8 leading-relaxed break-keep">동그라미교육원은 제주 지역
+                        아이들을 위해<br class="hidden md:block" />과학적인 데이터와 따뜻한 마음을 결합한 최적의 솔루션을 제공합니다.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Philosophy Section -->
+        <section id="ph" class="py-section-padding bg-slate-50">
+            <div class="container max-w-[1200px] mx-auto px-8">
+                <div class="max-w-4xl mx-auto text-center space-y-6 md:space-y-10 scroll-reveal">
+                    <h2 class="text-2xl md:text-4xl font-headline text-primary leading-tight break-keep">
+                        High-Tech Humanism:<br class="hidden md:block">첨단 기술과 재활의 조화로 아이들에게 희망을
+                    </h2>
+                    <p class="text-sm md:text-lg text-on-surface-variant leading-relaxed break-keep max-w-3xl mx-auto">
+                        동그라미교육원은 제주 지역의 학습 및 신경발달 어려움을 겪는 아이들을 위한 전문 연구센터입니다. 최첨단 소프트웨어를 활용한 인지 재활 시스템을 통해 아이의 숨겨진 학습
+                        잠재력을 최대한으로 끌어올리는 것을 목표로 합니다.
+                    </p>
+
+                    <div class="grid grid-cols-4 gap-1 md:gap-6 pt-4 md:pt-12 border-t border-slate-100">
+                        <!-- Point 1 -->
+                        <div
+                            class="flex flex-col items-center p-1 md:p-8 bg-transparent md:bg-slate-50 border-0 md:border border-slate-100 text-center transition-all">
+                            <div
+                                class="w-8 h-8 md:w-14 md:h-14 rounded-lg md:rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0 md:mb-5 border border-slate-100 md:border-0">
+                                <span class="material-symbols-outlined text-lg md:text-3xl">devices</span>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-[9px] md:text-lg font-bold text-slate-800 mb-0.5 md:mb-2 break-all md:break-keep">
+                                    최첨단 시스템</h3>
+                                <p class="text-[7px] md:text-xs text-slate-500 scale-90 md:scale-100 leading-tight">정밀
+                                    재활</p>
+                            </div>
+                        </div>
+
+                        <!-- Point 2 -->
+                        <div
+                            class="flex flex-col items-center p-1 md:p-8 bg-transparent md:bg-slate-50 border-0 md:border border-slate-100 text-center transition-all">
+                            <div
+                                class="w-8 h-8 md:w-14 md:h-14 rounded-lg md:rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0 md:mb-5 border border-slate-100 md:border-0">
+                                <span class="material-symbols-outlined text-lg md:text-3xl">record_voice_over</span>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-[9px] md:text-lg font-bold text-slate-800 mb-0.5 md:mb-2 break-all md:break-keep">
+                                    과학적 언어치료</h3>
+                                <p class="text-[7px] md:text-xs text-slate-500 scale-90 md:scale-100 leading-tight">체계적
+                                    솔루션</p>
+                            </div>
+                        </div>
+
+                        <!-- Point 3 -->
+                        <div
+                            class="flex flex-col items-center p-1 md:p-8 bg-transparent md:bg-slate-50 border-0 md:border border-slate-100 text-center transition-all">
+                            <div
+                                class="w-8 h-8 md:w-14 md:h-14 rounded-lg md:rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0 md:mb-5 border border-slate-100 md:border-0">
+                                <span class="material-symbols-outlined text-lg md:text-3xl">track_changes</span>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-[9px] md:text-lg font-bold text-slate-800 mb-0.5 md:mb-2 break-all md:break-keep">
+                                    개별맞춤 솔루션</h3>
+                                <p class="text-[7px] md:text-xs text-slate-500 scale-90 md:scale-100 leading-tight">1:1
+                                    전담</p>
+                            </div>
+                        </div>
+
+                        <!-- Point 4 -->
+                        <div
+                            class="flex flex-col items-center p-1 md:p-8 bg-transparent md:bg-slate-50 border-0 md:border border-slate-100 text-center transition-all">
+                            <div
+                                class="w-8 h-8 md:w-14 md:h-14 rounded-lg md:rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary shrink-0 md:mb-5 border border-slate-100 md:border-0">
+                                <span class="material-symbols-outlined text-lg md:text-3xl">biotech</span>
+                            </div>
+                            <div>
+                                <h3
+                                    class="text-[9px] md:text-lg font-bold text-slate-800 mb-0.5 md:mb-2 break-all md:break-keep">
+                                    전문 연구기반</h3>
+                                <p class="text-[7px] md:text-xs text-slate-500 scale-90 md:scale-100 leading-tight">임상
+                                    입증</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrated Programs & Concerns Section -->
+        <section id="programs" class="pt-12 md:pt-16 pb-0 bg-white">
+            <div class="container max-w-[1200px] mx-auto px-8">
+                <!-- 1. 6대 핵심 프로그램 -->
+                <div class="text-center mb-6 md:mb-stack-lg px-4 scroll-reveal">
+                    <h2 class="font-headline-lg text-2xl md:text-4xl text-primary mb-4 break-keep">6대 핵심 전문 프로그램</h2>
+                    <p class="text-sm md:text-lg text-on-surface-variant break-keep">카드를 클릭하여 상세 기술과 관련 혜택을 확인하세요.</p>
+                </div>
+
+                <!-- 6대 프로그램 퀵 메뉴 (모바일 전용 2x3 그리드 - 바우처와 패턴 통일) -->
+                <div class="md:hidden px-4 mb-6">
+                    <div id="program-quick-menu" class="grid grid-cols-2 gap-2 max-w-[400px] mx-auto">
+                        <!-- JS에서 동적 생성 -->
+                    </div>
+                </div>
+                <div id="program-expansion"
+                    class="max-h-0 md:max-h-none opacity-0 md:opacity-100 overflow-hidden transition-all duration-700 ease-in-out mb-8">
+                    <div id="program-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal pt-8">
+                        <!-- data.js 기반 동적 생성 -->
+                    </div>
+                </div>
+
+                <!-- 모바일 전용 확장 버튼 -->
+                <div class="flex justify-center mb-6 md:mb-24 md:hidden">
+                    <button id="program-toggle-btn" onclick="togglePrograms()"
+                        class="group flex items-center gap-3 px-10 py-4 bg-white border-2 border-primary text-primary rounded-full font-bold hover:bg-primary hover:text-white transition-all shadow-md active:scale-95">
+                        <span>전체 프로그램 확인하기</span>
+                        <span
+                            class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-180">expand_more</span>
+                    </button>
+                </div>
+
+                <!-- 2. 부모님 고민 섹션 (구분선 추가) - 초기에는 숨김 처리 -->
+                <div id="concern-section"
+                    class="pt-16 border-t border-slate-100 max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
+                    <div id="detail-header" class="text-center mb-16">
+                        <h2 id="detail-title"
+                            class="text-2xl md:text-4xl font-headline-lg text-primary mb-6 break-keep">혹시 우리 아이 때문에 걱정이
+                            많으신가요?</h2>
+                        <p id="detail-desc"
+                            class="text-sm md:text-lg text-on-surface-variant max-w-2xl mx-auto break-keep px-4">부모님의
+                            마음으로 아이의 어려움을 세심히 살피고, 과학적인 솔루션으로 함께 길을 찾겠습니다.</p>
+                    </div>
+
+                    <!-- 상세 기술 및 혜택 그리드 (새로 추가) -->
+                    <div id="tech-benefit-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                        <!-- 동적 생성 -->
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-xl font-bold text-primary mb-8 text-center">관련 부모님 고민</h3>
+                        <div id="concern-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- service1.js 기반 동적 생성 -->
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12 pb-12">
+                        <a id="detail-link" href="#"
+                            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-primary text-white rounded-full font-bold hover:bg-secondary transition-all shadow-xl group">
+                            상세 프로그램 페이지로 이동
                             <span
                                 class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                        <button onclick="closeProgramDetails()"
+                            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-slate-100 text-slate-600 rounded-full font-bold hover:bg-slate-200 transition-all">
+                            상세 정보 접기
+                            <span class="material-symbols-outlined">expand_less</span>
                         </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Programs -->
-        <section id="programs" class="bg-white py-section-padding">
+        <!-- Category Filter -->
+        <section id="vouchers" class="bg-slate-50 pt-6 md:pt-12 pb-section-padding">
             <div class="container max-w-[1200px] mx-auto px-8">
-                <div class="text-center mb-stack-lg px-4">
-                    <h2 class="font-headline-lg text-2xl md:text-4xl text-primary mb-4 break-keep">6대 핵심 전문 프로그램</h2>
-                    <p class="text-sm md:text-lg text-on-surface-variant break-keep">카드를 클릭하여 상세 기술과 관련 혜택을 확인하세요.</p>
+                <div class="text-center mb-stack-lg px-4 scroll-reveal">
+                    <h2 class="font-headline-lg text-2xl md:text-4xl text-primary mb-6 break-keep">정부 지원 바우처<br
+                            class="md:hidden" /> 상세 안내</h2>
+                    <p class="text-sm md:text-lg text-on-surface-variant mb-10 break-keep">제주도 교육청 및 보건복지부의<br
+                            class="md:hidden" /> 다양한 지원 사업을 확인하세요.</p>
+
+                    <div class="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-2 md:gap-3 px-4 md:px-0 max-w-[400px] md:max-w-none mx-auto"
+                        id="filter-group">
+                        <button onclick="filterVouchers('all')"
+                            class="filter-btn active bg-primary text-white px-5 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all shadow-md">전체</button>
+                        <button onclick="filterVouchers('baby')"
+                            class="filter-btn bg-white text-slate-600 px-5 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold border border-slate-200 transition-all hover:border-primary">영유아/아동</button>
+                        <button onclick="filterVouchers('edu')"
+                            class="filter-btn bg-white text-slate-600 px-5 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold border border-slate-200 transition-all hover:border-primary">교육청지원</button>
+                        <button onclick="filterVouchers('adult')"
+                            class="filter-btn bg-white text-slate-600 px-5 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold border border-slate-200 transition-all hover:border-primary">성인재활</button>
+                    </div>
+
+                    <!-- 확장 트리거 버튼 -->
+                    <div id="voucher-trigger" class="mt-12">
+                        <button onclick="toggleVouchers()"
+                            class="inline-flex items-center gap-3 px-10 py-4 bg-white text-primary border-2 border-primary rounded-full font-bold hover:bg-primary hover:text-white transition-all shadow-lg group">
+                            상세 바우처 목록 확인하기
+                            <span id="voucher-arrow"
+                                class="material-symbols-outlined transition-transform">expand_more</span>
+                        </button>
+                    </div>
                 </div>
-                <div id="program-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- DB 객체 기반 동적 생성 -->
+
+                <!-- 확장되는 영역 -->
+                <div id="voucher-expansion"
+                    class="max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
+                    <div id="voucher-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 min-h-[400px]">
+                        <!-- 자바스크립트로 동적 생성 -->
+                    </div>
+
+                    <div class="flex justify-center mt-16 pb-12">
+                        <button onclick="toggleVouchers()"
+                            class="inline-flex items-center gap-2 px-8 py-3 bg-slate-100 text-slate-500 rounded-full font-bold hover:bg-slate-200 transition-all">
+                            바우처 목록 접기
+                            <span class="material-symbols-outlined">expand_less</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Voucher Banner -->
-        <section class="py-16 bg-white border-y border-slate-100">
-            <div
-                class="container max-w-[1200px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="max-w-2xl text-center md:text-left">
-                    <h3 class="text-2xl md:text-3xl font-bold text-primary mb-4 break-keep">정부 지원 바우처 혜택을 확인하세요</h3>
-                    <p class="text-sm md:text-lg text-slate-600 leading-relaxed break-keep">제주도 교육청 및 보건복지부의 다양한 지원 사업을 통해 우리 아이의 훈련비 부담을
-                        효과적으로 덜어드립니다.</p>
-                </div>
-                <a href="바우처지원.html"
-                    class="bg-primary hover:bg-secondary text-white px-10 py-5 rounded-full font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center gap-3 group whitespace-nowrap min-w-[260px] justify-center">
-                    <span class="group-hover:hidden">바우처 안내 상세 보기</span>
-                    <span class="hidden group-hover:inline">바우처 상세 안내로 이동하기</span>
-                    <span
-                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-        </section>
+
 
         <!-- News Section -->
-        <section id="news" class="bg-white py-section-padding">
+        <section id="news" class="bg-white pt-section-padding pb-section-padding">
             <div class="container max-w-[1200px] mx-auto px-8">
-                <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-stack-lg gap-4 text-center md:text-left">
-                    <div>
-                        <h2 class="font-headline-lg text-2xl md:text-4xl text-primary mb-4 break-keep">교육원 소식</h2>
-                        <p class="text-sm md:text-lg text-on-surface-variant break-keep">동그라미교육원의 새로운 소식과 유용한 정보를 확인하세요.</p>
-                    </div>
-                    <a href="#" class="text-primary font-bold flex items-center hover:gap-2 transition-all text-sm md:text-base">
-                        전체보기 <span class="material-symbols-outlined ml-1">arrow_forward</span>
-                    </a>
+                <div class="text-center mb-stack-lg px-4 scroll-reveal">
+                    <h2 class="font-headline-lg text-2xl md:text-4xl text-primary mb-4 break-keep">교육원 소식</h2>
+                    <p class="text-sm md:text-lg text-on-surface-variant break-keep">동그라미교육원의 새로운 소식과 유용한 정보를 확인하세요.</p>
                 </div>
-                <div id="news-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div id="news-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 scroll-reveal">
                     <!-- card.js 기반 동적 생성 -->
+                </div>
+
+                <div class="flex justify-center scroll-reveal">
+                    <a href="#"
+                        class="inline-flex items-center gap-2 px-8 py-3 bg-slate-50 text-primary font-bold rounded-full hover:bg-primary hover:text-white transition-all group">
+                        전체 소식 보기
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -220,15 +398,18 @@
         <!-- CTA & Contact -->
         <section id="contact" class="py-section-padding bg-primary text-white overflow-hidden relative">
             <div class="container max-w-[1200px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
-                <div>
-                    <h2 class="text-2xl md:text-4xl font-bold mb-8 break-keep text-center md:text-left">우리아이의 밝은 미래,<br class="hidden md:block">지금 시작하세요</h2>
-                    <p class="text-sm md:text-lg opacity-80 mb-12 break-keep text-center md:text-left">전문 상담사가 상세한 상담과 함께<br class="hidden md:block">최적의 바우처 매칭을 도와드립니다.</p>
+                <div class="scroll-reveal">
+                    <h2 class="text-2xl md:text-4xl font-bold mb-8 break-keep text-center md:text-left">우리아이의 밝은 미래,<br
+                            class="hidden md:block">지금 시작하세요</h2>
+                    <p class="text-sm md:text-lg opacity-80 mb-12 break-keep text-center md:text-left">전문 상담사가 상세한 상담과
+                        함께<br class="hidden md:block">최적의 바우처 매칭을 도와드립니다.</p>
                     <div class="space-y-6">
                         <div class="flex items-center gap-4 justify-center md:justify-start">
-                            <span class="material-symbols-outlined text-2xl md:text-3xl text-secondary-container">location_on</span>
+                            <span
+                                class="material-symbols-outlined text-2xl md:text-3xl text-secondary-container">location_on</span>
                             <span class="text-base md:text-xl">제주시 중앙로 541 2층 (아라동)</span>
                         </div>
-                        <div class="mt-8">
+                        <div class="mt-8 flex justify-center md:justify-start">
                             <a href="tel:050714731480"
                                 class="inline-flex items-center gap-6 bg-white/10 hover:bg-white/20 border border-white/20 px-8 py-5 rounded-2xl transition-all group shadow-xl">
                                 <span
@@ -247,7 +428,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 scroll-reveal">
                     <h3 class="text-xl font-bold mb-6">오시는 길</h3>
                     <p class="mb-6 opacity-80">아라 초등학교 건너편 롯데리아 옆 건물 2층입니다. 1층 웅진 씽크북 건물 뒤쪽 지하주차장을 이용하실 수 있습니다.</p>
                     <div class="aspect-video bg-slate-200/20 rounded-lg flex items-center justify-center mb-6">
@@ -267,7 +448,7 @@
     </main>
 
     <!-- Modal System -->
-    <div id="modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
+    <div id="contactModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
         <div class="relative bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl modal-enter">
             <button onclick="closeModal()"
@@ -281,70 +462,152 @@
     </div>
 
     <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="service.js"></script>
+    <script src="service1.js"></script>
     <script src="card.js"></script>
+
     <script>
-        const DB = {
-            programs: [
-                {
-                    id: "p1", title: "난독 개선 프로그램", icon: "fas fa-book-reader",
-                    summary: "시지각, 언어, 뇌기능 통합 재활을 통해 읽기 경로를 과학적으로 회복합니다.",
-                    description: "전산화된 시지각 훈련 소프트웨어와 음운 인식 강화를 통해 읽기 유창성과 이해력을 근본적으로 개선합니다.",
-                    tech: ["시지각향상훈련", "인지기능 향상훈련", "언어기능 향상훈련", "난독특화훈련", "난독검사"],
-                    linkedVouchers: ["v_h"],
-                    url: "난독개선프로그램.html"
-                },
-                {
-                    id: "p2", title: "경계선지능 개선", icon: "fas fa-brain",
-                    summary: "0.3초 이내의 빠른 피드백 훈련으로 뇌가소성을 극대화하고 처리 속도를 높입니다.",
-                    description: "전산화 인지 치료(CBT)를 통해 작업 기억과 실행 기능을 정량적으로 강화합니다.",
-                    tech: ["CBT 시스템", "0.3초 반응 훈련", "도미넌트 가속화"],
-                    linkedVouchers: ["v_g"],
-                    url: "경계선지능.html"
-                },
-                {
-                    id: "p3", title: "ADHD/자폐/발달재활", icon: "fas fa-puzzle-piece",
-                    summary: "소리뇌파 기술과 충동 억제 훈련을 통한 행동 제어 및 정서 안정 솔루션.",
-                    description: "특정 주파수를 활용한 뇌파 동기화 기술과 3단계 충동성 억제 프로그램을 적용합니다.",
-                    tech: ["소리뇌파 기술", "3단계 충동 억제", "사회인지 훈련"],
-                    linkedVouchers: ["v_a", "v_d"],
-                    url: "ADHD.html"
-                },
-                {
-                    id: "p4", title: "언어능력 향상 훈련", icon: "fas fa-comments",
-                    summary: "언어심리학 기반의 음성 분석 소프트웨어를 활용한 정밀 발음 및 표현 교정.",
-                    description: "스피치마스터 및 피치마스터를 활용하여 실시간 음성 스펙트럼을 분석합니다.",
-                    tech: ["스피치마스터", "피치마스터", "음성 분석 SW"],
-                    linkedVouchers: ["v_b"],
-                    url: "언어능력향상.html"
-                },
-                {
-                    id: "p5", title: "첨단인지 재활 치료", icon: "fas fa-microchip",
-                    summary: "메타인지 강화와 좌우뇌 균형 훈련으로 학습 효율성과 인지 기능을 극대화합니다.",
-                    description: "비침습적 장비를 통한 뇌 균형 재활로 증상의 근본 원인을 해결합니다.",
-                    tech: ["메타인지 전략", "뇌 균형 재활 장비"],
-                    linkedVouchers: ["v_d"],
-                    url: "첨단인지재활프로그램.html"
-                },
-                {
-                    id: "p6", title: "첨단인지 검사 프로그램", icon: "fas fa-vial",
-                    summary: "K-MVPT 및 Brain Memory 검사를 통한 객관적 상태 진단 및 데이터 리포트.",
-                    description: "전두엽 기능과 시지각 능력을 수치화하여 지능발달, 난독등을 검사합니다.",
-                    tech: ["K-MVPT 검사", "Brain Memory 검사"],
-                    linkedVouchers: ["v_h", "v_g"],
-                    url: "첨단인지검사프로그램.html"
-                }
-            ],
-            vouchers: [
-                { id: "v_a", cat: "baby", title: "영유아 발달 지원 서비스", info: "지역 사회 서비스", icon: "fas fa-baby" },
-                { id: "v_b", cat: "baby", title: "아동 청소년 심리 지원", info: "지역 사회 서비스", icon: "fas fa-child" },
-                { id: "v_c", cat: "baby", title: "성인 재활 심리 지원", info: "지역 사회 서비스", icon: "fas fa-user-graduate" },
-                { id: "v_d", cat: "adult", title: "발달재활 서비스", info: "보건복지부", icon: "fas fa-hand-holding-heart" },
-                { id: "v_e", cat: "edu", title: "희망 나눔 카드", info: "제주도 교육청", icon: "fas fa-credit-card" },
-                { id: "v_f", cat: "edu", title: "장애 유아 치료 카드", info: "제주도 교육청", icon: "fas fa-id-card-alt" },
-                { id: "v_g", cat: "edu", title: "경계선 지능 치료비 지원", info: "제주도 교육청", icon: "fas fa-brain" },
-                { id: "v_h", cat: "edu", title: "난독 난산 서비스", info: "제주도 교육청", icon: "fas fa-book-reader" }
-            ]
-        };
+        // 고민 카드 렌더링 (service1.js 기반)
+        function renderConcerns(filterLink = null) {
+            const concernGrid = document.getElementById('concern-grid');
+            if (!concernGrid) return;
+
+            const filteredData = filterLink ? CONCERN_DATA.filter(item => item.link === filterLink) : CONCERN_DATA;
+
+            if (filteredData.length === 0) {
+                concernGrid.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-slate-400">
+                        <span class="material-symbols-outlined text-4xl mb-4 block">info</span>
+                        <p>해당 프로그램과 관련된 주요 고민 정보가 곧 업데이트될 예정입니다.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            concernGrid.innerHTML = filteredData.map(item => `
+                <div onclick="location.href='${item.link}'"
+                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-md transition-all group cursor-pointer flex flex-col h-full">
+                    <div class="text-primary mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
+                        <span class="material-symbols-outlined text-4xl">${item.icon}</span>
+                    </div>
+                    <p class="text-slate-700 leading-relaxed font-medium mb-4 flex-grow">
+                        ${item.text}
+                        <br><span class="text-primary text-sm font-bold">${item.tag}</span>
+                    </p>
+                    <div class="text-primary text-xs font-bold flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        상세 보기 <span class="material-symbols-outlined text-xs ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 프로그램 상세 정보 확장
+        let currentOpenProgramId = null;
+
+        function expandProgramDetails(id) {
+            const section = document.getElementById('concern-section');
+
+            // 이미 열려있는 카드를 다시 클릭하면 닫기 (토글 기능)
+            if (currentOpenProgramId === id && !section.classList.contains('max-h-0')) {
+                closeProgramDetails();
+                return;
+            }
+
+            const program = PROGRAM_DATA.find(p => p.id === id);
+            if (!program) return;
+
+            currentOpenProgramId = id;
+            const techGrid = document.getElementById('tech-benefit-grid');
+            const title = document.getElementById('detail-title');
+            const desc = document.getElementById('detail-desc');
+            const link = document.getElementById('detail-link');
+
+            // 내용 업데이트
+            title.innerHTML = `<span class="text-secondary">[${program.title}]</span> 상세 정보 및 관련 혜택`;
+            desc.innerText = program.description;
+            link.href = program.link;
+
+            // 기술 및 혜택 그리드 생성
+            techGrid.innerHTML = `
+                <div class="bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100">
+                    <h4 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary">psychology</span> 핵심 기술 솔루션
+                    </h4>
+                    <ul class="space-y-3">
+                        ${program.skills.map(skill => `
+                            <li class="flex items-center gap-2 text-on-surface-variant text-sm md:text-base">
+                                <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                ${skill}
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+                <div class="bg-secondary-container/10 p-6 md:p-8 rounded-3xl border border-secondary/10">
+                    <h4 class="text-lg font-bold text-secondary mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined">payments</span> 지원 및 혜택
+                    </h4>
+                    <ul class="space-y-3">
+                        ${program.benefits.map(benefit => `
+                            <li class="flex items-center gap-2 text-on-surface-variant text-sm md:text-base">
+                                <span class="material-symbols-outlined text-secondary text-sm">redeem</span>
+                                ${benefit}
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+
+            // 고민 그리드 필터링 렌더링
+            renderConcerns(program.link);
+
+            // 섹션 확장 애니메이션
+            section.classList.remove('max-h-0', 'opacity-0');
+            section.classList.add('max-h-[2500px]', 'opacity-100', 'py-section-padding');
+
+            // 해당 섹션으로 부드럽게 이동
+            setTimeout(() => {
+                const yOffset = -100; // 헤더 높이 고려
+                const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }, 300);
+        }
+
+        function closeProgramDetails() {
+            const section = document.getElementById('concern-section');
+            section.classList.add('max-h-0', 'opacity-0');
+            section.classList.remove('max-h-[2500px]', 'opacity-100', 'py-section-padding');
+            currentOpenProgramId = null;
+
+            // 다시 프로그램 그리드로 이동
+            setTimeout(() => {
+                document.getElementById('programs').scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+        }
+
+        // 프로그램 카드 렌더링 (data.js 기반)
+        function renderPrograms() {
+            const programGrid = document.getElementById('program-grid');
+            if (!programGrid) return;
+
+            programGrid.innerHTML = PROGRAM_DATA.map(item => `
+                <div onclick="expandProgramDetails(${item.id})"
+                    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl">${item.icon}</span>
+                        </div>
+                        <span class="text-[10px] font-bold text-secondary bg-secondary-container/30 px-3 py-1 rounded-full uppercase tracking-wider">${item.tag}</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">${item.title}</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow break-keep">${item.description}</p>
+                    <div class="flex items-center text-primary text-sm font-bold opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
+                        상세 기술 확인하기
+                        <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </div>
+                </div>
+            `).join('');
+        }
 
         // 소식 카드 렌더링 (card.js 기반)
         function renderNews() {
@@ -369,119 +632,196 @@
             `).join('');
         }
 
-        // 초기화
-        window.addEventListener('DOMContentLoaded', () => {
-            renderPrograms();
-            renderNews();
-        });
+        // 바우처 필터링 로직 (service.js 기반)
 
-        // 프로그램 렌더링
-        function renderPrograms() {
-            const grid = document.getElementById('program-grid');
-            grid.innerHTML = DB.programs.map(p => `
-                <div onclick="location.href='${p.url}'" class="group relative bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full overflow-hidden">
-                    <!-- Hover Highlight Top Bar -->
-                    <div class="absolute top-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500 z-20"></div>
-                    
-                    <div class="p-8 flex flex-col h-full relative z-10 group-hover:-translate-y-1 transition-transform duration-300">
-                        <!-- Icon to Text Transition Area (Fixed Height) -->
-                        <div class="h-16 mb-6 flex items-start">
-                            <div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center group-hover:w-full group-hover:h-10 group-hover:bg-primary group-hover:rounded-lg transition-all duration-300 overflow-hidden">
-                                <span class="material-symbols-outlined text-primary text-3xl group-hover:hidden">
-                                    ${p.id === 'p1' ? 'menu_book' : p.id === 'p2' ? 'psychology' : p.id === 'p3' ? 'bolt' : p.id === 'p4' ? 'record_voice_over' : p.id === 'p5' ? 'biotech' : 'analytics'}
-                                </span>
-                                <span class="hidden group-hover:block text-white text-[10px] font-bold tracking-widest uppercase">프로그램 페이지 이동</span>
-                            </div>
+        function filterVouchers(category, shouldExpand = true) {
+            const grid = document.getElementById('voucher-grid');
+            if (!grid) return;
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                const btnCategory = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+                if (btnCategory === category) {
+                    btn.classList.add('active', 'bg-primary', 'text-white');
+                    btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                } else {
+                    btn.classList.remove('active', 'bg-primary', 'text-white');
+                    btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+                }
+            });
+
+            const filtered = category === 'all' ? vouchersData : vouchersData.filter(v => v.category === category);
+
+            grid.innerHTML = filtered.map((v, idx) => `
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-secondary font-bold text-sm uppercase tracking-widest">${v.subtitle}</span>
+                        ${v.tag ? `<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded text-[10px] font-bold">${v.tag}</div>` : ''}
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-6 group-hover:text-secondary transition-colors">${v.title}</h3>
+                    <div class="space-y-4 mb-8 flex-grow">
+                        <div class="flex justify-between border-b border-slate-50 pb-2">
+                            <span class="text-slate-500 text-sm">지원 금액</span>
+                            <span class="text-primary font-bold">${v.price}</span>
                         </div>
-
-                        <div class="flex flex-col h-full">
-                            <h3 class="text-xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">${p.title}</h3>
-                            <p class="text-on-surface-variant text-sm mb-6 leading-relaxed flex-grow group-hover:text-slate-700 transition-colors">${p.summary}</p>
-                            <div class="flex flex-wrap gap-2">
-                                ${p.tech.map(t => `<span class="px-3 py-1 bg-white rounded-full text-[10px] font-bold text-slate-500 border border-slate-100 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">${t}</span>`).join('')}
-                            </div>
+                        <div class="flex justify-between border-b border-slate-50 pb-2">
+                            <span class="text-slate-500 text-sm">지원 대상</span>
+                            <span class="text-slate-700 text-sm font-medium">${v.target}</span>
                         </div>
                     </div>
+                    <button onclick="openDetailModal(${vouchersData.indexOf(v)})" class="w-full bg-slate-50 text-primary py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn">
+                        상세 정보 확인
+                        <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
                 </div>
+            `).join('');
+
+            // 필터를 클릭하면 자동으로 확장 (초기 로드 시에는 제외)
+            const expansion = document.getElementById('voucher-expansion');
+            if (shouldExpand && expansion && expansion.classList.contains('max-h-0')) {
+                toggleVouchers();
+            }
+        }
+
+        // 바우처 섹션 토글
+        function toggleVouchers() {
+            const expansion = document.getElementById('voucher-expansion');
+            const arrow = document.getElementById('voucher-arrow');
+            const trigger = document.getElementById('voucher-trigger');
+            if (!expansion) return;
+
+            const isHidden = expansion.classList.contains('max-h-0');
+
+            if (isHidden) {
+                expansion.classList.remove('max-h-0', 'opacity-0');
+                expansion.classList.add('max-h-[5000px]', 'opacity-100', 'mt-12');
+                if (arrow) arrow.classList.add('rotate-180');
+                if (trigger) trigger.classList.add('hidden'); // 상세 버튼은 숨김
+            } else {
+                expansion.classList.add('max-h-0', 'opacity-0');
+                expansion.classList.remove('max-h-[5000px]', 'opacity-100', 'mt-12');
+                if (arrow) arrow.classList.remove('rotate-180');
+                if (trigger) trigger.classList.remove('hidden');
+
+                // 접을 때 섹션 상단으로 이동
+                document.getElementById('vouchers').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 프로그램 섹션 토글 로직
+        function togglePrograms() {
+            const expansion = document.getElementById('program-expansion');
+            const btn = document.getElementById('program-toggle-btn');
+            const arrow = btn.querySelector('.material-symbols-outlined');
+
+            const isHidden = expansion.classList.contains('max-h-0');
+
+            if (isHidden) {
+                expansion.classList.remove('max-h-0', 'opacity-0');
+                expansion.classList.add('max-h-[3000px]', 'opacity-100');
+                btn.classList.add('active', 'bg-primary', 'text-white');
+                btn.querySelector('span').innerText = '프로그램 목록 접기';
+                arrow.classList.add('rotate-180');
+            } else {
+                expansion.classList.add('max-h-0', 'opacity-0');
+                expansion.classList.remove('max-h-[3000px]', 'opacity-100');
+                btn.classList.remove('active', 'bg-primary', 'text-white');
+                btn.querySelector('span').innerText = '전체 프로그램 확인하기';
+                arrow.classList.remove('rotate-180');
+
+                // 접을 때 상단으로 스크롤
+                document.getElementById('programs').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 프로그램 퀵 메뉴 렌더링
+        function renderProgramQuickMenu() {
+            const menu = document.getElementById('program-quick-menu');
+            if (!menu) return;
+
+            menu.innerHTML = PROGRAM_DATA.map(p => `
+                <button onclick="expandProgramDetails(${p.id})" 
+                    class="px-5 md:px-6 py-2 md:py-2.5 bg-white border border-slate-200 text-slate-700 rounded-full text-xs md:text-sm font-bold shadow-md active:bg-primary active:text-white transition-all break-keep">
+                    ${p.title}
+                </button>
             `).join('');
         }
 
+        // 초기화
+        window.addEventListener('DOMContentLoaded', () => {
+            renderConcerns();
+            renderPrograms();
+            renderNews();
+            renderProgramQuickMenu();
+            filterVouchers('all', false); // 초기 로드 시에는 확장하지 않음
+        });
 
-
-
-
-        // 모달 열기
-        function openModal(id) {
-            const p = DB.programs.find(item => item.id === id);
+        function openDetailModal(index) {
+            const v = vouchersData[index];
+            const modal = document.getElementById('contactModal');
             const content = document.getElementById('modal-content');
 
-            // 연계 바우처 추천
-            const linkedVouchers = p.linkedVouchers.map(vId => DB.vouchers.find(v => v.id === vId)).filter(v => v);
-            const voucherHtml = linkedVouchers.length > 0 ? `
-                <div class="mt-8 p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <h5 class="font-bold text-primary mb-4 flex items-center">
-                        <span class="material-symbols-outlined mr-2 text-tertiary">lightbulb</span>
-                        추천 바우처 (경제적 지원)
-                    </h5>
-                    <div class="space-y-4">
-                        ${linkedVouchers.map(v => `
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <div class="font-bold text-sm">${v.title}</div>
-                                    <div class="text-xs text-slate-500">${v.info}</div>
-                                </div>
-                                <span class="material-symbols-outlined text-primary">arrow_forward</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            ` : '';
-
             content.innerHTML = `
-                <div class="mb-8">
-                    <span class="text-primary font-bold text-xs md:text-sm uppercase tracking-widest">Detail View</span>
-                    <h2 class="text-2xl md:text-3xl font-bold text-primary mt-2 break-keep">${p.title}</h2>
-                </div>
                 <div class="space-y-6">
-                    <p class="text-sm md:text-lg leading-relaxed text-slate-600 break-keep">${p.description}</p>
                     <div>
-                        <h4 class="font-bold text-primary mb-3">적용 핵심 기술</h4>
-                        <div class="flex flex-wrap gap-2">
-                            ${p.tech.map(t => `<span class="px-4 py-2 bg-primary-container text-primary rounded-xl text-sm font-bold">${t}</span>`).join('')}
+                        <span class="text-secondary font-bold text-sm uppercase tracking-widest">${v.subtitle}</span>
+                        <h3 class="text-2xl font-bold text-primary mt-2">${v.title}</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-xl text-sm">
+                        <div>
+                            <p class="text-slate-500 font-bold mb-1">지원 금액</p>
+                            <p class="text-primary font-bold">${v.price}</p>
+                        </div>
+                        <div>
+                            <p class="text-slate-500 font-bold mb-1">지원 대상</p>
+                            <p class="text-slate-700">${v.target}</p>
                         </div>
                     </div>
-                    ${voucherHtml}
-                    <div class="pt-8 flex flex-col sm:flex-row gap-4">
-                        <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank" class="flex-1 bg-[#03C75A] text-white text-center py-4 rounded-xl font-bold hover:opacity-90 transition-all">네이버 톡톡 상담</a>
-                        <button onclick="closeModal()" class="flex-1 bg-slate-100 text-slate-600 py-4 rounded-xl font-bold hover:bg-slate-200 transition-all">닫기</button>
+                    <div>
+                        <p class="text-slate-500 font-bold text-sm mb-2">상세 서비스 내용</p>
+                        <div class="bg-white border border-slate-100 p-4 rounded-xl text-sm text-slate-600 leading-relaxed">
+                            ${v.service}
+                        </div>
+                    </div>
+                    <div class="pt-6 flex flex-col sm:flex-row gap-3">
+                        <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
+                            class="flex-1 bg-[#03C75A] text-white text-center py-4 rounded-xl font-bold hover:opacity-90 transition-all">네이버 톡톡 상담</a>
+                        <button onclick="closeModal()"
+                            class="flex-1 bg-slate-100 text-slate-600 py-4 rounded-xl font-bold hover:bg-slate-200 transition-all">닫기</button>
                     </div>
                 </div>
             `;
 
-            document.getElementById('modal').classList.remove('hidden');
-            document.getElementById('modal').classList.add('flex');
-            document.body.classList.add('modal-active');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
-            document.getElementById('modal').classList.add('hidden');
-            document.getElementById('modal').classList.remove('flex');
-            document.body.classList.remove('modal-active');
+            const modal = document.getElementById('contactModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
         }
 
         // 모바일 메뉴 토글
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
+            const iconMenu = document.getElementById('icon-menu');
+            const iconClose = document.getElementById('icon-close');
             const isHidden = menu.classList.contains('hidden');
 
             if (isHidden) {
                 menu.classList.remove('hidden');
-                icon.innerText = 'close';
+                iconMenu.classList.add('opacity-0', 'rotate-90');
+                iconClose.classList.remove('opacity-0', 'rotate-90');
                 document.body.style.overflow = 'hidden';
             } else {
                 menu.classList.add('hidden');
-                icon.innerText = 'menu';
+                iconMenu.classList.remove('opacity-0', 'rotate-90');
+                iconClose.classList.add('opacity-0', 'rotate-90');
                 document.body.style.overflow = 'auto';
             }
         }
