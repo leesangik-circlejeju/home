@@ -370,17 +370,33 @@
                     <p class="text-xs md:text-lg text-on-surface-variant break-keep">동그라미교육원의 새로운 소식과 유용한 정보를 확인하세요.</p>
                 </div>
 
-                <div id="news-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12 scroll-reveal">
-                    <!-- card.js 기반 동적 생성 -->
+                <div id="news-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 scroll-reveal">
+                    <!-- 처음 3개는 여기에 렌더링 -->
                 </div>
 
-                <div class="flex justify-center scroll-reveal">
-                    <a href="#"
+                <!-- 확장되는 영역 (더보기 클릭 시 노출) -->
+                <div id="news-expansion"
+                    class="max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
+                    <div id="news-grid-more" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+                        <!-- 나머지 항목은 여기에 렌더링 -->
+                    </div>
+
+                    <div class="flex justify-center pb-12">
+                        <button onclick="toggleNews()"
+                            class="inline-flex items-center gap-2 px-8 py-3 bg-slate-100 text-slate-500 rounded-full font-bold hover:bg-slate-200 transition-all">
+                            소식 목록 접기
+                            <span class="material-symbols-outlined">expand_less</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex justify-center scroll-reveal" id="news-trigger">
+                    <button onclick="toggleNews()"
                         class="inline-flex items-center gap-2 px-6 py-2.5 md:px-8 md:py-3 bg-slate-50 text-primary text-sm md:text-base font-bold rounded-full hover:bg-primary hover:text-white transition-all group">
                         전체 소식 보기
                         <span
                             class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
@@ -637,10 +653,11 @@
         // 소식 카드 렌더링 (card.js 기반)
         function renderNews() {
             const newsGrid = document.getElementById('news-grid');
-            if (!newsGrid) return;
+            const newsGridMore = document.getElementById('news-grid-more');
+            if (!newsGrid || !newsGridMore) return;
 
-            newsGrid.innerHTML = CARD_DATA.news.map(item => `
-                <div class="group cursor-pointer">
+            const createCardHTML = (item) => `
+                <div class="group cursor-pointer" onclick="window.open('${item.link}', '_blank')">
                     <div class="aspect-video rounded-2xl overflow-hidden mb-4 shadow-sm border border-slate-100">
                         <img src="${item.image}"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -654,7 +671,33 @@
                         <p class="text-slate-400 text-[9px] md:text-xs">${item.date}</p>
                     </div>
                 </div>
-            `).join('');
+            `;
+
+            // 처음 3개와 나머지 분리 렌더링
+            newsGrid.innerHTML = CARD_DATA.news.slice(0, 3).map(createCardHTML).join('');
+            newsGridMore.innerHTML = CARD_DATA.news.slice(3).map(createCardHTML).join('');
+        }
+
+        // 소식 섹션 토글
+        function toggleNews() {
+            const expansion = document.getElementById('news-expansion');
+            const trigger = document.getElementById('news-trigger');
+            if (!expansion) return;
+
+            const isHidden = expansion.classList.contains('max-h-0');
+
+            if (isHidden) {
+                expansion.classList.remove('max-h-0', 'opacity-0');
+                expansion.classList.add('max-h-[5000px]', 'opacity-100', 'mt-12');
+                if (trigger) trigger.classList.add('hidden');
+            } else {
+                expansion.classList.add('max-h-0', 'opacity-0');
+                expansion.classList.remove('max-h-[5000px]', 'opacity-100', 'mt-12');
+                if (trigger) trigger.classList.remove('hidden');
+
+                // 접을 때 섹션 상단으로 이동
+                document.getElementById('news').scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
         // 바우처 필터링 로직 (service.js 기반)
