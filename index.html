@@ -94,20 +94,20 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="프로그램.html">프로그램 소개</a>
                 <a class="text-slate-600 hover:text-primary transition-colors font-medium"
-                    href="바우처지원.html#vouchers">바우처 안내</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html">교육원소개</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="기관소개.html#news">교육원
-                    소식</a>
-                <a class="text-slate-600 hover:text-primary transition-colors font-medium" href="index.html#contact">오시는
-                    길</a>
+                    href="index.html#programs">프로그램안내</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
+                    href="index.html#vouchers">바우처지원</a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
+                    href="index.html#news">교육원소식</a> </a>
+                <a class="text-slate-600 hover:text-primary transition-colors font-medium"
+                    href="index.html#contact">오시는길</a>
             </div>
 
             <div class="flex items-center gap-4">
                 <a href="https://talk.naver.com/ct/wchwxw?frm=mnmb&frm=nmb_detail#nafullscreen" target="_blank"
-                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">상담
-                    문의</a>
+                    class="hidden sm:flex bg-[#03C75A] text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition-all shadow-md text-sm">네이버
+                    톡톡 상담 </a>
             </div>
         </nav>
 
@@ -115,20 +115,16 @@
         <div id="mobile-menu"
             class="hidden absolute top-20 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xl flex flex-col p-6 space-y-4 md:hidden animate-in slide-in-from-top duration-300">
             <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
-                href="프로그램.html" onclick="toggleMenu()">
-                프로그램 소개 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+                href="index.html#programs" onclick="toggleMenu()">
+                프로그램안내 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
             </a>
             <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
-                href="바우처지원.html#vouchers" onclick="toggleMenu()">
-                바우처 안내 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+                href="index.html#vouchers" onclick="toggleMenu()">
+                바우처지원 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
             </a>
             <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
-                href="기관소개.html" onclick="toggleMenu()">
-                교육원소개 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
-            </a>
-            <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
-                href="기관소개.html#news" onclick="toggleMenu()">
-                교육원 소식 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+                href="index.html#news" onclick="toggleMenu()">
+                교육원소식 <span class="material-symbols-outlined text-slate-300">chevron_right</span>
             </a>
             <a class="text-slate-600 font-bold py-3 border-b border-slate-100 flex justify-between items-center"
                 href="index.html#contact" onclick="toggleMenu()">
@@ -256,15 +252,23 @@
                     <p class="text-sm md:text-lg text-on-surface-variant break-keep">카드를 클릭하여 상세 기술과 관련 혜택을 확인하세요.</p>
                 </div>
 
-                <!-- 6대 프로그램 그리드 (모바일 2열, PC 4열 - 일관성 유지) -->
-                <div id="program-expansion" class="mb-8 overflow-hidden transition-all duration-700 ease-in-out">
+                <!-- 6대 프로그램 퀵 메뉴 (모바일 전용 선택박스) -->
+                <div class="md:hidden px-4 mb-8">
+                    <div id="program-quick-menu" class="grid grid-cols-2 gap-2 max-w-[400px] mx-auto">
+                        <!-- JS에서 동적 생성 -->
+                    </div>
+                </div>
+
+                <!-- 6대 프로그램 그리드 (PC 3x2 배열 복구, 모바일 1열 최적화) -->
+                <div id="program-expansion"
+                    class="max-h-0 md:max-h-none opacity-0 md:opacity-100 overflow-hidden transition-all duration-700 ease-in-out mb-8">
                     <div id="program-grid"
-                        class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8 scroll-reveal pt-4 md:pt-8">
+                        class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 scroll-reveal pt-4 md:pt-8">
                         <!-- data.js 기반 동적 생성 -->
                     </div>
                 </div>
 
-                <!-- 모바일 전용 확장 버튼 -->
+                <!-- 모바일 전용 확장 버튼 (필요 시 노출 가능하도록 준비) -->
                 <div class="hidden justify-center mb-6 md:mb-24">
                     <button id="program-toggle-btn" onclick="togglePrograms()"
                         class="group flex items-center gap-3 px-10 py-4 bg-white border-2 border-primary text-primary rounded-full font-bold hover:bg-primary hover:text-white transition-all shadow-md active:scale-95">
@@ -274,7 +278,7 @@
                     </button>
                 </div>
 
-                <!-- 2. 부모님 고민 섹션 (구분선 추가) - 초기에는 숨김 처리 -->
+                <!-- 2. 세부프로그ㅐ부모님 고민 섹션 (구분선 추가) - 초기에는 숨김 처리 -->
                 <div id="concern-section"
                     class="pt-4 md:pt-6 border-t border-slate-100 max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out">
                     <div id="detail-header"
@@ -290,7 +294,7 @@
                         </h2>
                         <div class="w-10 h-1 bg-secondary/30 mx-auto rounded-full mb-3 md:mb-4"></div>
                         <p id="detail-desc"
-                            class="text-xs md:text-lg text-slate-600 max-w-3xl mx-auto break-keep leading-relaxed opacity-90">
+                            class="text-sm md:text-lg text-slate-600 max-w-3xl mx-auto break-keep leading-relaxed opacity-90">
                             아이의 어려움을 세심히 살피고, 과학적인 솔루션으로 함께 길을 찾겠습니다.
                         </p>
                     </div>
@@ -300,20 +304,7 @@
                         <!-- 동적 생성 -->
                     </div>
 
-                    <div class="mb-12">
-                        <h3 class="text-xl font-bold text-primary mb-8 text-center">관련 부모님 고민</h3>
-                        <div id="concern-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                            <!-- service1.js 기반 동적 생성 -->
-                        </div>
-                    </div>
-
                     <div class="flex flex-row justify-center items-center gap-2 md:gap-4 mt-10 pb-8">
-                        <a id="detail-link" href="#"
-                            class="flex-1 md:flex-none md:w-auto inline-flex items-center justify-center gap-2 md:gap-3 px-4 md:px-8 py-3 bg-primary text-white rounded-full text-[11px] md:text-sm font-bold hover:bg-secondary transition-all shadow-lg group">
-                            상세 페이지 이동
-                            <span
-                                class="material-symbols-outlined text-xs md:text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
                         <button onclick="closeProgramDetails()"
                             class="flex-1 md:flex-none md:w-auto inline-flex items-center justify-center gap-2 md:gap-3 px-4 md:px-8 py-3 bg-slate-100 text-slate-600 rounded-full text-[11px] md:text-sm font-bold hover:bg-slate-200 transition-all">
                             상세 정보 접기
@@ -463,7 +454,6 @@
     <!-- Scripts -->
     <script src="data.js"></script>
     <script src="service.js"></script>
-    <script src="service1.js"></script>
     <script src="card.js"></script>
 
     <script>
@@ -491,11 +481,11 @@
                         <div class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                             <span class="material-symbols-outlined text-base">${item.icon}</span>
                         </div>
-                        <span class="text-[8px] md:text-[9px] font-bold text-secondary bg-secondary-container/20 px-2 py-0.5 rounded-full uppercase tracking-wider">${item.tag}</span>
+                        <span class="text-[10px] md:text-[12px] font-bold text-secondary bg-secondary-container/20 px-2 py-0.5 rounded-full uppercase tracking-wider">${item.tag}</span>
                     </div>
-                    <p class="text-slate-700 text-[10px] md:text-xs font-medium leading-relaxed mb-3 flex-grow break-keep">${item.text}</p>
-                    <div class="text-primary text-[9px] md:text-[10px] font-bold flex items-center opacity-0 group-hover:opacity-100 transition-all translate-x-[-5px] group-hover:translate-x-0">
-                        상세 보기 <span class="material-symbols-outlined text-[9px] md:text-[10px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    <p class="text-slate-700 text-[12px] md:text-[15px] font-medium leading-relaxed mb-3 flex-grow break-keep">${item.text}</p>
+                    <div class="text-primary text-[10px] md:text-[12px] font-bold flex items-center opacity-0 group-hover:opacity-100 transition-all translate-x-[-5px] group-hover:translate-x-0">
+                        상세 보기 <span class="material-symbols-outlined text-[10px] md:text-[12px] ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </div>
                 </div>
             `).join('');
@@ -516,48 +506,59 @@
             const program = PROGRAM_DATA.find(p => p.id === id);
             if (!program) return;
 
+            // PC에서만 그리드 확장 (모바일에서는 버튼 클릭 시 상세 정보로 바로 이동)
+            const expansion = document.getElementById('program-expansion');
+            if (expansion && window.innerWidth >= 768) {
+                expansion.classList.remove('max-h-0', 'opacity-0');
+                expansion.classList.add('max-h-[3000px]', 'opacity-100');
+            }
+
+            // 퀵 메뉴 버튼 하이라이트
+            const buttons = document.querySelectorAll('#program-quick-menu button');
+            buttons.forEach((btn, idx) => {
+                if (PROGRAM_DATA[idx].id === id) {
+                    btn.classList.add('bg-primary', 'text-white', 'border-primary');
+                    btn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
+                } else {
+                    btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+                    btn.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+                }
+            });
+
             currentOpenProgramId = id;
             const techGrid = document.getElementById('tech-benefit-grid');
             const title = document.getElementById('detail-title');
             const desc = document.getElementById('detail-desc');
-            const link = document.getElementById('detail-link');
 
             // 내용 업데이트 (모바일 최적화 디자인 적용)
             title.innerHTML = `
-                <span class="text-secondary font-black block md:inline mb-1 md:mb-0 text-xl md:text-4xl">[${program.title}]</span> 
-                <span class="inline-block bg-primary text-white px-2.5 py-0.5 md:px-3 md:py-1 rounded-md text-xs md:text-2xl align-middle md:ml-2 font-light">상세 안내</span>
+                <span class="text-secondary font-black block md:inline mb-1 md:mb-0 text-3xl md:text-4xl">[${program.title}]</span> 
+                <span class="inline-block bg-primary text-white px-2.5 py-0.5 md:px-3 md:py-1 rounded-md text-sm md:text-2xl align-middle md:ml-2 font-light">상세 안내</span>
             `;
             desc.innerText = program.description;
-            link.href = program.link;
-
             // 기술 및 혜택 그리드 생성 (가독성 중심의 컴팩트 레이아웃)
             techGrid.innerHTML = `
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
                     <!-- Card 1: Description -->
                     <div class="md:col-span-2 glass-card border border-slate-100 p-5 md:p-6 rounded-2xl flex flex-col justify-between shadow-sm bg-white/50 backdrop-blur-sm">
                         <div class="space-y-3 md:space-y-4">
                             <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center text-primary">
                                 <span class="material-symbols-outlined text-lg md:text-xl">${program.icon}</span>
                             </div>
-                            <h3 class="font-bold text-base md:text-lg text-slate-800 leading-tight">첨단 기술 기반 훈련 프로세스</h3>
-                            <p class="text-[11px] md:text-sm text-slate-600 break-keep leading-relaxed opacity-90">
+                            <h3 class="font-bold text-xl md:text-xl text-slate-800 leading-tight">첨단 기술 기반 훈련 프로세스</h3>
+                            <p class="text-[13px] md:text-base text-slate-600 break-keep leading-relaxed opacity-90">
                                 ${program.description
                     .replace(/(인지검사 \(브레인메모리검사\)|시지각검사 \(K-mvpt\)|언어능력평가 \(Kolra\))/g, '<strong class="text-primary font-bold">$1</strong>')
                     .replace(/(시지각 훈련 SW|청각처리 개선 솔루션)/g, '<strong class="text-primary font-bold">$1</strong>')}
                             </p>
-                        </div>
-                        <div class="mt-4 flex flex-wrap gap-1.5">
-                            ${program.processTags.map(tag => `
-                                <span class="px-2.5 py-1 bg-slate-50 border border-slate-100 rounded-full text-[9px] md:text-[10px] font-bold text-slate-500 hover:border-primary/20 hover:text-primary transition-all cursor-default">${tag}</span>
-                            `).join('')}
                         </div>
                     </div>
 
                     <!-- Card 2: Target -->
                     <div class="bg-[#003366] p-5 md:p-6 rounded-2xl text-white flex flex-col justify-between shadow-lg">
                         <div class="space-y-4">
-                            <h3 class="font-bold text-base md:text-lg text-white leading-tight">교육 대상</h3>
-                            <ul class="space-y-2 text-[11px] md:text-xs opacity-90">
+                            <h3 class="font-bold text-base md:text-xl text-white leading-tight">교육 대상</h3>
+                            <ul class="space-y-2 text-[12px] md:text-sm opacity-90">
                                 ${program.targets.map(target => `
                                     <li class="flex items-start gap-2">
                                         <span class="material-symbols-outlined text-[#B4E197] font-bold text-sm md:text-base">check_circle</span>
@@ -566,25 +567,20 @@
                                 `).join('')}
                             </ul>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-white/10">
-                            <p class="text-[8px] md:text-[9px] opacity-40 leading-relaxed break-keep font-medium">※ 정확한 진단을 위해 난독 검사가 실시될 수 있습니다</p>
-                        </div>
                     </div>
 
                     <!-- Card 3: Details (Nested Grid) -->
-                    <div class="md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <div class="md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                         ${program.details.map((detail) => `
                             <div class="bg-white/70 backdrop-blur-sm border border-slate-100 p-4 md:p-5 rounded-2xl shadow-sm hover:shadow-md transition-all group">
-                                <h4 class="font-bold text-[13px] md:text-base text-primary mb-2 leading-tight group-hover:text-secondary transition-colors">${detail.title}</h4>
-                                <p class="text-slate-500 text-[10px] md:text-xs leading-relaxed break-keep opacity-80">${detail.content}</p>
+                                <h4 class="font-bold text-[15px] md:text-lg text-primary mb-2 leading-tight group-hover:text-secondary transition-colors">${detail.title}</h4>
+                                <p class="text-slate-500 text-[12px] md:text-sm leading-relaxed break-keep opacity-80">${detail.content}</p>
                             </div>
                         `).join('')}
                     </div>
                 </div>
             `;
 
-            // 고민 그리드 필터링 렌더링
-            renderConcerns(program.link);
 
             // 섹션 확장 애니메이션
             section.classList.remove('max-h-0', 'opacity-0');
@@ -678,35 +674,35 @@
             const filtered = category === 'all' ? vouchersData : vouchersData.filter(v => v.category === category);
 
             grid.innerHTML = filtered.map((v, idx) => `
-                <div class="bg-white p-5.5 md:p-7.5 rounded-xl shadow-sm border border-slate-100 hover:shadow-lg transition-all group flex flex-col h-full">
+                <div class="bg-white p-4 md:p-7.5 rounded-xl shadow-sm border border-slate-100 hover:shadow-lg transition-all group flex flex-col h-full">
                     <!-- Top Badge Row -->
                     <div class="flex justify-between items-start mb-3 h-4">
-                        <span class="text-secondary font-bold text-[9px] md:text-[10px] uppercase tracking-widest">${v.subtitle}</span>
-                        ${v.tag ? `<div class="bg-[#B4E197]/20 text-[#3d5a2d] px-1.5 py-0.5 rounded text-[8px] md:text-[9px] font-bold">${v.tag}</div>` : ''}
+                        <span class="text-secondary font-bold text-[11px] md:text-[10px] uppercase tracking-widest">${v.subtitle}</span>
+                        ${v.tag ? `<div class="bg-[#B4E197]/20 text-[#3d5a2d] px-1.5 py-0.5 rounded text-[10px] md:text-[9px] font-bold">${v.tag}</div>` : ''}
                     </div>
                     
                     <!-- Title Area -->
-                    <h3 class="text-[14px] md:text-[16px] font-bold text-primary mb-4.5 group-hover:text-secondary transition-colors break-keep leading-tight min-h-[2.4em] flex items-center">
+                    <h3 class="text-[17px] md:text-[16px] font-bold text-primary mb-4.5 group-hover:text-secondary transition-colors break-keep leading-tight min-h-[2.4em] flex items-center">
                         ${v.title}
                     </h3>
 
                     <!-- Info List Area -->
                     <div class="space-y-2 mb-6 flex-grow">
                         <div class="flex justify-between items-center border-b border-slate-50 pb-2">
-                            <span class="text-slate-500 text-[10px] md:text-[11px] flex-shrink-0">지원 금액</span>
-                            <span class="text-primary font-bold text-[10px] md:text-[12px] text-right ml-2">${v.price}</span>
+                            <span class="text-slate-500 text-[12px] md:text-[11px] flex-shrink-0">지원 금액</span>
+                            <span class="text-primary font-bold text-[12px] md:text-[12px] text-right ml-2">${v.price}</span>
                         </div>
                         <div class="flex justify-between items-start border-b border-slate-50 pb-2">
-                            <span class="text-slate-500 text-[10px] md:text-[11px] mt-0.5 flex-shrink-0">지원 대상</span>
-                            <span class="text-slate-700 text-[10px] md:text-[11px] font-medium text-right ml-4 leading-normal">${v.target}</span>
+                            <span class="text-slate-500 text-[12px] md:text-[11px] mt-0.5 flex-shrink-0">지원 대상</span>
+                            <span class="text-slate-700 text-[12px] md:text-[11px] font-medium text-right ml-4 leading-normal">${v.target}</span>
                         </div>
                     </div>
 
                     <!-- Bottom Button -->
                     <button onclick="openDetailModal(${vouchersData.indexOf(v)})" 
-                        class="w-full bg-slate-50 text-primary py-2.5 rounded-lg font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-1.5 group/btn text-[12px] md:text-[13px] mt-auto">
+                        class="w-full bg-slate-50 text-primary py-2.5 rounded-lg font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-1.5 group/btn text-[14px] md:text-[13px] mt-auto">
                         상세 정보 확인
-                        <span class="material-symbols-outlined text-[14px] md:text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                        <span class="material-symbols-outlined text-[16px] md:text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
                     </button>
                 </div>
             `).join('');
@@ -784,9 +780,9 @@
 
         // 초기화
         window.addEventListener('DOMContentLoaded', () => {
-            renderConcerns();
             renderPrograms();
             renderNews();
+            renderProgramQuickMenu();
             filterVouchers('all', false); // 초기 로드 시에는 확장하지 않음
         });
 
